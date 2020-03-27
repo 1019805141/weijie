@@ -1,0 +1,54 @@
+/* pages/my/commander/commander.wxss */
+page{
+    background: #f7f7f7;
+}
+.input>view{
+    float: left;
+    width: 150rpx;
+    font-size: 30rpx;
+}
+.input>input{
+    float: left;
+}
+.input{
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    font-size: 30rpx;
+    background: #ffffff;
+}
+.input>p{
+    background: #e94638;
+    color: #ffffff;
+    float: right;
+    text-align: center;
+    padding: 8rpx 16rpx;
+    font-size: 28rpx;
+    border-radius: 6rpx;
+}
+.bg{
+    background: #ffffff;
+}
+.input>image{
+    width:14rpx;
+    height: 23rpx;
+    float: right;
+    margin-top: 10rpx;
+}
+.input picker{
+    float: left;
+
+}
+.input:last-child{
+    border-bottom: none;
+}
+.btn{
+    background: #e94638;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 10rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: 60rpx;
+}

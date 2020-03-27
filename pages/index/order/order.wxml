@@ -1,0 +1,65 @@
+<!--pages/index/order/order.wxml-->
+<view class="topline"></view>
+<view class="bg">
+    <view class="container">
+        <view class="top">
+            <p>团长：社区团长小张</p>
+            <view>自提点：报业文苑南门A区-南门</view>
+        </view>
+        <view class="input">
+            <view>购买人：</view>
+            <input type="text" placeholder="请填写姓名" placeholder-style="color:#777777"/>
+        </view>
+        <view class="input">
+            <view>手机号：</view>
+            <input type="text" placeholder="请输入手机号"/>
+        </view>
+    </view>
+</view>
+
+<image src="../../../image/line.png" class="line"></image>
+<view class="jiange"></view>
+<view class="bg">
+    <view class="container">
+        <view class="title">
+            <i></i>
+            <view>订单商品</view>
+        </view>
+        <view class="cp_list">
+            <image src="../../../image/cplist.png"></image>
+            <view class="cp_text">
+                <view>海南千禧圣女果 小番茄 小西红柿 1kg </view>
+                <view style="float: left; margin-top: 20rpx;"><p>￥<span>9.99</span></p><div>￥9.99</div></view>
+                <p>X1</p>
+            </view>
+        </view>
+        <view class="cp_list">
+            <image src="../../../image/cplist.png"></image>
+            <view class="cp_text">
+                <view>海南千禧圣女果 小番茄 小西红柿 1kg </view>
+                <view style="float: left; margin-top: 20rpx;"><p>￥<span>9.99</span></p><div>￥9.99</div></view>
+                <p>X1</p>
+            </view>
+        </view>
+        <view class="cp_jiage">
+            <p>商品金额</p>
+            <view>￥<span>9.99</span></view>
+        </view>
+    </view>
+</view>
+<view class="jiange"></view>
+<view class="bg">
+    <view class="container">
+        <view class="beizhu">
+            <view>备注：</view>
+            <textarea name="" id="" cols="30" rows="10" placeholder="在此填写备注" placeholder-style="color:#777777"></textarea>
+        </view>
+    </view>
+</view>
+<view class="bottom">
+    <view class="bottom_left">
+        <view>总计金额：</view>
+        <p>￥<span>9.99</span></p>
+    </view>
+    <view class="bottom_right">确认支付</view>
+</view>

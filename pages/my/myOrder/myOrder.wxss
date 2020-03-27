@@ -1,0 +1,136 @@
+/* pages/my/myOrder/myOrder.wxss */
+page{
+    background: #f2f2f2;
+}
+.nav_tab {
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+}
+
+.show {
+    line-height: 80rpx;
+    text-align: center;
+    flex: 1;
+    color: #333333;
+    font-size: 30rpx;
+}
+
+.hidden {
+    line-height: 80rpx;
+    text-align: center;
+    color: #e94638;
+    flex: 1;
+    font-size: 30rpx;
+    border-bottom: 2px solid #e94638;
+}
+.bg{
+    background: #ffffff;
+    overflow: hidden;
+    margin-top: 14rpx;
+}
+.box{
+    padding: 20rpx 0;
+    overflow: hidden;
+}
+.box_top{
+    overflow: hidden;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 14rpx;
+}
+.box_top>view{
+    float: left;
+    width: 60%;
+}
+.box_top>view>image{
+    width: 26rpx;
+    height: 26rpx;
+    display: block;
+    float: left;
+    margin-right: 10rpx;
+    padding-top: 4rpx;
+}
+.box_top>view>view{
+    color: #797979;
+    font-size: 28rpx;
+    float: left;
+}
+.red{
+    float: right;
+    color: #e94638;
+    font-size: 28rpx;
+}.green{
+    float: right;
+    color: #00bc1f;
+    font-size: 28rpx;
+}
+.box_cp>image{
+    width: 134rpx;
+    height: 134rpx;
+    border-radius: 12rpx;
+    float: left;
+    margin-right: 14rpx;
+}
+.box_cp{
+    margin-top: 20rpx;
+    clear: both;
+    overflow: hidden;
+}
+.box_cp_text{
+    float: left;
+    width: 60%;
+}
+.box_cp_text>view{
+    font-size: 30rpx;
+    color: #000000;
+    margin-bottom: 14rpx;
+    margin-top: 10rpx;
+}
+.box_cp_text>p{
+    font-size: 28rpx;
+    color: #797979;
+    display: block;
+}
+.box_cp_right{
+    float: right;
+}
+.box_cp_right>p{
+    color: #a8a6a7;
+    margin-bottom: 14rpx;
+    text-decoration: line-through;
+    margin-top: 10rpx;
+    display: block;
+}
+.box_cp_right>view{
+    color: #e94638;
+    font-size: 30rpx;
+}
+.box_cp_right>view>span{
+    font-weight: bold;
+    font-size: 36rpx;
+}
+.box_bottom{
+    padding-top: 20rpx;
+    border-top: 1px solid #f2f2f2;
+}
+.box_bottom>view{
+    font-size: 28rpx;
+    color: #333333;
+    float: left;
+    margin-top: 6rpx;
+}
+.box_bottom>p{
+    float: right;
+    color: #333333;
+    font-size: 28rpx;
+}
+.box_bottom>p>span{
+    color: #e94638;
+}
+.box_bottom>p>span>i{
+    color: #e94638;
+    font-weight: bold;
+    font-size: 36rpx;
+}

@@ -1,0 +1,103 @@
+/* pages/my/sqOrder/sqOrder.wxss */
+page{
+    background: #f7f7f7;
+}
+
+.index_top_search {
+  position: relative;
+  margin: 30rpx 0;
+}
+.index_top_search>input {
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #eeeeee;
+  border-radius: 100rpx;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+}
+
+.index_top_search image {
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  left: 4%;
+  top: 26%;
+
+}
+.list{
+    background: #ffffff;
+    border-radius: 20rpx;
+    box-shadow: 0px 2px 10px #f1f1f1;
+    margin-bottom: 30rpx ;
+}
+.list_top{
+    padding: 20rpx;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 28rpx;
+}
+.list_top>p{
+    font-size: 28rpx;
+    float: right;
+    color: #ffb702;
+}
+.list_mid{
+    padding: 20rpx;
+}
+.list_mid>view{
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
+}
+.list_mid>view>span{
+    color: #e94638;
+}
+.list_bottom{
+    overflow: hidden;
+    padding: 20rpx;
+    border-top: 1px solid #eeeeee;
+}
+.list_bottom>image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    float: left;
+}
+.list_bottom_text{
+    float: left;
+    width: 62%;
+    margin-left: 20rpx;
+}
+.list_bottom_text>view{
+    font-size: 30rpx;
+    margin-bottom: 2rpx;
+}
+.list_bottom_text>p{
+    font-size: 28rpx;
+    color: #666666;
+    margin-bottom: 2rpx;
+    display: block;
+}
+.list_bottom_text>span{
+    color: #e94638;
+    font-size: 28rpx;
+    display: block;
+}
+.list_bottom_text>span>image{
+    width: 19rpx;
+    height: 24rpx;
+}
+.list_right{
+    float: right;
+    width: 18%;
+}
+.list_right>view{
+    font-size:40rpx;
+    font-weight: bold;
+    color: #e94638;
+    text-align: center;
+}
+.list_right>p{
+    text-align: center;
+    font-size:28rpx;
+    color: #e94638;
+    display: block;
+}

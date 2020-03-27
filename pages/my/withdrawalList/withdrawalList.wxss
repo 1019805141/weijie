@@ -1,0 +1,48 @@
+/* pages/my/withdrawalList/withdrawalList.wxss */
+page{
+    background: #f7f7f7;
+}
+.blue{
+    color: #6f86e6;
+}
+.red{
+    color: #c1542d;
+
+}
+.list_text{
+    position: absolute;
+    top: 30rpx;
+    left: 30rpx;
+    width: 93%;
+}
+.list_title{
+    font-size: 42rpx;
+    margin-bottom: 10rpx;
+}
+.list_title>p{
+    float: right;
+    font-weight: bold;
+}
+.list{
+    position: relative;
+    margin-top: 30rpx;
+}
+.list>image{
+    width:690rpx;
+    height: 316rpx;
+    border-radius: 20rpx;
+}
+.list_r{
+    font-size:28rpx ;
+    margin-bottom: 10rpx;
+}
+.list_r>p{
+    float: right;
+}
+.list_p{
+    font-size:28rpx ;
+    margin-bottom: 10rpx;
+}
+.list_p>p{
+    float: right;
+}

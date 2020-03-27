@@ -1,0 +1,60 @@
+<!--pages/my/my.wxml-->
+<view class="top">
+    <view class="my">
+        <view class="my_left">
+            <image src='../../image/mytx.png'></image>
+            <view>小张</view>
+            <p>普通用户</p>
+        </view>
+        <view class="my_right">
+            <image src="../../image/xiaoxi.png"></image>
+            消息
+        </view>
+
+    </view>
+    <image src="../../image/mybg.png"></image>
+</view>
+<view class="container">
+    <view class="order">
+        <view class="order_title">我的订单<p>全部订单></p></view>
+        <view class="order_icon">
+            <image src="../../image/my_icon1.png"></image>
+            <view>待付款</view>
+        </view>
+        <view class="order_icon">
+            <image src="../../image/my_icon2.png"></image>
+            <view>待提货</view>
+        </view>
+        <view class="order_icon">
+            <image src="../../image/my_icon3.png"></image>
+            <view>已完成</view>
+        </view>
+        <view class="order_icon">
+            <image src="../../image/my_icon4.png"></image>
+            <view>已取消</view>
+        </view>
+    </view>
+    <view class="list">
+        <view class="list_box">
+            <image src="../../image/mylist4.png"></image>
+            <view>申请团长</view>
+            <image src="../../image/jiantou.png"></image>
+        </view>
+        <view class="list_box">
+            <image src="../../image/mylist5.png"></image>
+            <view>设置默认团长</view>
+            <image src="../../image/jiantou.png"></image>
+        </view>
+        <view class="list_box">
+            <image src="../../image/mylist6.png"></image>
+            <view>关于薇姐爱团GO</view>
+            <image src="../../image/jiantou.png"></image>
+        </view>
+    </view>
+    <view class="erweima">
+        <view>向团长出示二维码取货</view>
+        <image src="../../image/erweima.png"></image>
+    </view>
+</view>
+
+<fid-btn p='{{p}}'></fid-btn>

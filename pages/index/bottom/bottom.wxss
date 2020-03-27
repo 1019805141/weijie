@@ -1,0 +1,47 @@
+.bottom-bottom{
+  width:100%;
+  position:fixed;
+  height:99rpx;
+  border-top: 1rpx solid #e5e5e5;
+  background:#fdfdfd;
+  overflow:hidden;
+  bottom:0;
+  left:0;
+}
+.bottom-bottom>view,.bottom-bottom>navigator{
+  float:left;
+  text-align:center;
+  color:#666;
+  font-size:20rpx;
+  width:25%;
+  overflow:hidden;
+  position: relative;
+}
+.bottom-bottom .ac{
+  color:#e94638;
+}
+.bottom-bottom image{
+  width:40rpx;
+  height:40rpx;
+  display:block;
+  margin:0 auto;
+  margin-top:16rpx;
+}
+.bottom-bottom view view,.bottom-bottom navigator view{
+  margin-top:10rpx;
+}
+.db{
+  padding-bottom:60rpx;
+}
+.gou text{
+  position: absolute;
+  right: 30%;
+  top: 2rpx;
+  background: #e94638;
+  color: #ffffff;
+  width: 30rpx;
+  height: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
+  border-radius: 50%;
+}

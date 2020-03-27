@@ -1,0 +1,139 @@
+/* pages/my/my.wxss */
+page {
+    background: #f7f7f7;
+}
+
+.top {
+    position: relative;
+
+}
+
+.top>image {
+    width: 750rpx;
+    height: 338rpx;
+    display: block;
+}
+
+.my {
+    position: absolute;
+    left: 30rpx;
+    width: 92%;
+    top: 34rpx;
+}
+.my_left{
+    float: left;
+}
+.my_left>image {
+    width: 100rpx;
+    height: 100rpx;
+    display: block;
+    float: left;
+    margin-right: 20rpx;
+}
+
+.my_left>view {
+    font-size: 36rpx;
+    color: #ffffff;
+    float: left;
+    margin-right: 20rpx;
+    margin-top: 30rpx;
+}
+.my_left>p{
+    font-size: 28rpx;
+    border-radius: 100rpx;
+    border: 1px solid #ffffff;
+    padding: 4rpx 12rpx;
+    text-align: center;
+    margin-top: 30rpx;
+    color: #ffffff;
+    display: inline-block;
+}
+.my_right{
+    color: #ffffff;
+    float: right;
+    margin-top: 30rpx;
+}
+.my_right>image{
+    width: 25rpx;
+    height: 30rpx;
+}
+.order{
+    border-radius: 20rpx;
+    background: #ffffff;
+    padding: 30rpx;
+    position: relative;
+    overflow: hidden;
+    margin-top: -25%;
+}
+.order_title{
+    font-size: 32rpx;
+    color: #333333;
+
+}
+.order_title>p{
+    float: right;
+    color: #a3a3a3;
+    font-size: 28rpx;
+}
+.order_icon{
+    width: 25%;
+    float: left;
+    text-align: center;
+    margin-top: 30rpx;
+}
+.order_icon>image{
+    width: 56rpx;
+    height: 50rpx;
+    margin: 0 auto;
+}
+.order_icon>view{
+    font-size: 28rpx;
+    color: #555555;
+}
+.list{
+    background: #ffffff;
+    border-radius: 20rpx;
+    margin-top: 30rpx;
+}
+.list_box>image:first-child{
+    width: 36rpx;
+    height: 36rpx;
+    float: left;
+    padding-left: 30rpx;
+}
+.list_box{
+    padding: 30rpx 0;
+    border-bottom: 1px solid #eeeeee;
+    overflow: hidden;
+}   
+.list_box>view{
+    font-size: 30rpx;
+    color: #333333;
+    float: left;
+    margin-left: 20rpx;
+}
+.list_box>image:last-child{
+    float: right;
+    width: 14rpx;
+    height: 23rpx;
+    margin-right: 30rpx;
+}
+.list_box:last-child{
+    border-bottom: none;
+}
+.erweima{
+    margin-top: 30rpx;
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+.erweima>view{
+    font-size: 30rpx;
+    color: #e94638;
+}
+.erweima>image{
+    width: 248rpx;
+    height: 248rpx;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20rpx;
+}

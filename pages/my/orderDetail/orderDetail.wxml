@@ -1,0 +1,63 @@
+<!--pages/my/orderDetail/orderDetail.wxml-->
+<view class="top">
+    <view class="top_text">
+        <view class="container">
+            <view>待支付</view>
+            <span>订单超过30分钟自动取消，请在20分18内完成交易</span>
+        </view>
+    </view>
+    <image src="../../../image/orderBg.png"></image>
+</view>
+<view class="container">
+    <view class="box">
+        <view class="box_top">
+            <view>社区团长小张</view>
+            <span>自提点：报业文苑南门A区-南区</span>
+        </view>
+        <view class="cp_list">
+            <image src="../../../image/cplist.png"></image>
+            <view class="cp_text">
+                <view>海南千禧圣女果 小番茄</view>
+                <view style="float: left; margin-top: 20rpx;"><p>￥<span>9.99</span></p><div>￥9.99</div></view>
+                <p>X1</p>
+            </view>
+        </view>
+        <view class="cp_list">
+            <image src="../../../image/cplist.png"></image>
+            <view class="cp_text">
+                <view>海南千禧圣女果 小番茄</view>
+                <view style="float: left; margin-top: 20rpx;"><p>￥<span>9.99</span></p><div>￥9.99</div></view>
+                <p>X1</p>
+            </view>
+        </view>
+        <view class="cp_jiage">
+            <p>商品金额</p>
+            <view>￥<span>9.99</span></view>
+        </view>
+    </view>
+</view>
+<view class="container">
+<view class="bg">
+        <view class="ms">
+            <view>实付款</view>
+            <p>￥9.99</p>
+        </view>
+        <view class="ms">
+            <view>订单编号</view>
+            <p>13123132123132</p>
+        </view>
+        <view class="ms">
+            <view>下单时间</view>
+            <p>2020-01-14 10:10:26</p>
+        </view>
+    </view>
+</view>
+<view class="erweima">
+    <view>向团长出示二维码取货</view>
+    <image src="../../../image/erweima.png"></image>
+</view>
+
+<view class="bottom">
+    <view class="goumai">立即购买</view>
+    <view class="gouwuche">加入购物车</view>
+</view>

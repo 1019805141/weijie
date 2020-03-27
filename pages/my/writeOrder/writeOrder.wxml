@@ -1,0 +1,43 @@
+<!--pages/my/writeOrder/writeOrder.wxml-->
+<view class="topline"></view>
+<view class="container">
+    <view class="box">
+        <view class="box_top">
+            <image src="../../../image/mytx.png"></image>
+            <view class="box_top_text">
+                <view>用户小张</view>
+                <p>188123456</p>
+                <p>山东省济南市槐荫区报业文苑A区</p>
+            </view>
+        </view>
+        <view class="box_bottom">
+            未取货订单 2
+        </view>
+    </view>
+    <checkbox-group bindchange="checkboxChange">
+        <view class="list" wx:for="{{order}}" wx:key="key">
+                <checkbox class="weui-check" value="{{item.id}}" checked="{{item.checked}}" />
+                <view class="cp_box">
+                    <view class="cp_title">订单号：{{item.order}}<p>商品数量：{{item.num}}</p></view>
+                    <view class="cp_list" wx:for="{{item.cp}}" wx:for-index='index' wx:for-item="items">
+                        <image src="{{items.img}}"></image>
+                        <view class="cp_list_text">
+                            <view>{{items.name}}</view>
+                            <p>￥<span>{{items.price}}</span></p>
+                        </view>
+                        <view class="cp_num">X{{items.num}}</view>
+                    </view>
+                </view>
+            </view>
+        </checkbox-group>
+</view>
+<view class="bottom">
+        <checkbox-group bindchange="checkboxChangeAll" class="bottom_check">
+            <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+            <view>全选</view>
+        </checkbox-group>
+        <view class="bottom_text">
+            共<p>4</p>件商品 已选择<p>4</p>件
+        </view>
+        <view class="btn">确认核销</view>
+</view>

@@ -1,0 +1,79 @@
+/* pages/my/cashWithdrawal/cashWithdrawal.wxss */
+page{
+    background: #f7f7f7;
+}
+.pay{
+    height: 110rpx;
+}
+.pay>view{
+    font-size: 28rpx;
+    float: left;
+    line-height: 110rpx;
+}
+.pay>view>image{
+    width: 47rpx;
+    height: 42rpx;
+    margin-right: 10rpx;
+    margin-top: 34rpx;
+    float: left;
+}
+.bg{
+    background: #ffffff;
+    overflow: hidden;
+}
+.price{
+    padding: 30rpx 0;
+    font-size: 28rpx;
+}
+.input_box>view{
+    font-weight: bold;
+    font-size: 48rpx;
+    float: left;
+}
+.input_box>input{
+    float: left;
+    margin-left: 10rpx;
+    width: 70%;
+    padding-top: 10rpx;
+    font-size: 28rpx;
+}
+.input_box>p{
+    color: #ffb702;
+    font-size: 28rpx;
+    float: right;
+    padding-top: 10rpx;
+}
+.input_box{
+    overflow: hidden;
+    padding-bottom: 30rpx;
+    border-bottom: 1px solid #f7f7f7;
+}
+.input_box2{
+    margin-top: 30rpx;
+}
+.input_box2>view{
+    float: left;
+    font-size: 28rpx;
+    margin-right:20rpx;
+}
+.input_box2>textarea{
+    float: left;
+    font-size: 28rpx;
+    padding-top: 4rpx;
+}
+.btn{
+    background: #e94638;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+    width: 100%;
+    color: #ffffff;
+    margin-top: 56rpx;
+    margin-bottom: 30rpx;
+}
+.mingxi{
+    text-align: center;
+    color: #999999;
+    font-size: 28rpx;
+}

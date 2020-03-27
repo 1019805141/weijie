@@ -1,0 +1,36 @@
+<!--pages/my/commander/commander.wxml-->
+<view class="topline"></view>
+<view class="bg">
+    <view class="container">
+        <view class="input">
+            <view>姓名</view>
+            <input type="text" placeholder="您的姓名" placeholder-style="color:#888888" />
+        </view>
+        <view class="input">
+            <view>手机号</view>
+            <input type="number" placeholder="您的手机号" placeholder-style="color:#888888" />
+        </view>
+        <view class="input">
+            <view>验证码</view>
+            <input type="text" placeholder="输入验证码" placeholder-style="color:#888888" />
+            <p>获取验证码</p>
+        </view>
+        <view class="input">
+            <view>地区</view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker">
+                    {{defult}}
+                </view>
+              </picker>
+              <image src="../../../image/jiantou.png"></image>
+        </view> 
+        <view class="input">
+            <view>详细地址</view>
+            <input type="text" placeholder="请输入详细地址" placeholder-style="color:#888888" />
+        </view>
+    </view>
+</view>
+
+<view class="container">
+    <view class="btn">立即申请</view>
+</view>

@@ -1,0 +1,56 @@
+<!--pages/index/commander/commander.wxml-->
+<view class="topline"></view>
+<view class="top">
+    <view class="container">
+        <view class='top_1'>当前位置</view>
+        <view class="top_left">山东省济南市槐荫区横支九号路</view>
+        <view class="top_right">修改></view>
+    </view>
+</view>
+<view class="container">
+    <view class="list">
+        <image src="../../../image/mytx.png"></image>
+        <view class="list_text">
+            <view>社区团长小张</view>
+            <p><image src="../../../image/dw.png"></image>距您0.25km</p>
+            <span>自提点:报业文苑南门A区-南门</span>
+        </view>
+        <view class="list_right">选TA</view>
+    </view>
+    <view class="list">
+        <image src="../../../image/mytx.png"></image>
+        <view class="list_text">
+            <view>社区团长小张</view>
+            <p><image src="../../../image/dw.png"></image>距您0.25km</p>
+            <span>自提点:报业文苑南门A区-南门</span>
+        </view>
+        <view class="list_right">选TA</view>
+    </view>
+    <view class="list">
+        <image src="../../../image/mytx.png"></image>
+        <view class="list_text">
+            <view>社区团长小张</view>
+            <p><image src="../../../image/dw.png"></image>距您0.25km</p>
+            <span>自提点:报业文苑南门A区-南门</span>
+        </view>
+        <view class="list_right">选TA</view>
+    </view>
+    <view class="list">
+        <image src="../../../image/mytx.png"></image>
+        <view class="list_text">
+            <view>社区团长小张</view>
+            <p><image src="../../../image/dw.png"></image>距您0.25km</p>
+            <span>自提点:报业文苑南门A区-南门</span>
+        </view>
+        <view class="list_right">选TA</view>
+    </view>
+    <view class="list">
+        <image src="../../../image/mytx.png"></image>
+        <view class="list_text">
+            <view>社区团长小张</view>
+            <p><image src="../../../image/dw.png"></image>距您0.25km</p>
+            <span>自提点:报业文苑南门A区-南门</span>
+        </view>
+        <view class="list_right">选TA</view>
+    </view>
+</view>

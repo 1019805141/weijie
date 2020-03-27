@@ -1,0 +1,25 @@
+<!--pages/my/withdrawalList/withdrawalList.wxml-->
+<view class="topline"></view>
+<view class="container">
+    <view class="list">
+        <view class="list_text blue">
+            <view class="list_title">提现成功<p>￥400</p></view>
+            <view class="list_r">账户:微信钱包<p>手续费:0.00</p></view>
+            <view class="list_p">发起时间：2020-03-02 13:00</view>
+            <view class="list_p">审核时间：2020-03-02 13:00</view>
+            <view class="list_p">备注：无</view>
+        </view>
+        <image src="../../../image/mbg1.png"></image>
+    </view>
+    <view class="list">
+        <view class="list_text red">
+            <view class="list_title">审核中<p>￥400</p></view>
+            <view class="list_r">账户:微信钱包<p>手续费:0.00</p></view>
+            <view class="list_p">发起时间：2020-03-02 13:00</view>
+            <view class="list_p">审核时间：--</view>
+            <view class="list_p">备注：无</view>
+        </view>
+        <image src="../../../image/mbg2.png"></image>
+    </view>
+</view>
+

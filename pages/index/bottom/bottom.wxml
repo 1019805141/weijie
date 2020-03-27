@@ -1,0 +1,20 @@
+<view style='height:200rpx;'></view>
+<view class="bottom-bottom {{systemInfo?'db':''}}">
+  <view bindtap='indexS' class='{{p==0?"ac":""}}'>
+    <image src='{{p==0?"../../../image/s1.png":"../../../image/n1.png"}}'></image>
+    <view>首页</view>
+  </view>
+  <view bindtap='tixianmingxiS' class='{{p==1?"ac":""}}'>
+    <image src='{{p==1?"../../../image/s2.png":"../../../image/n2.png"}}'></image>
+    <view>分类</view>
+  </view>
+  <view bindtap='yaoqingS' class='gou{{p==2?"ac":""}}'>
+    <text class="">1</text>
+    <image src='{{p==2?"../../../image/s3.png":"../../../image/n3.png"}}'></image>
+    <view>购物车</view>
+  </view>
+  <view class='{{p==3?"ac":""}}' bindtap='geren'>
+    <image src='{{p==3?"../../../image/s4.png":"../../../image/n4.png"}}'></image>
+    <view>我的</view>
+  </view>
+</view>

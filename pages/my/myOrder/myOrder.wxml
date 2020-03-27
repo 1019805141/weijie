@@ -1,0 +1,86 @@
+<!--pages/my/myOrder/myOrder.wxml-->
+<view class="topline"></view>
+<view class="nav_tab">
+    <view wx:for="{{list}}" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' bindtap="selected">
+        {{item}}
+        <view class="{{selected==index?'nav_underline':''}}"></view>
+    </view>
+</view>
+<view class="bg">
+    <view class="container">
+        <view class="box">
+            <view class="box_top">
+                <view>
+                    <image src="../../../image/time.png"></image>
+                    <view>2019-01-04</view>
+                </view>
+                <p class="red">待付款</p>
+            </view>
+            <view class="box_cp"> 
+                <image src="../../../image/cplist.png"></image>
+                <view class="box_cp_text">
+                    <view>沙窝林子天津沙窝萝卜</view>
+                    <p>数量：8</p>
+                </view>
+                <view class="box_cp_right">
+                    <p>￥9.99</p>
+                    <view>￥<span>9.99</span></view>
+                </view>
+            </view>
+            <view class="box_cp"> 
+                <image src="../../../image/cplist.png"></image>
+                <view class="box_cp_text">
+                    <view>沙窝林子天津沙窝萝卜</view>
+                    <p>数量：8</p>
+                </view>
+                <view class="box_cp_right">
+                    <p>￥9.99</p>
+                    <view>￥<span>9.99</span></view>
+                </view>
+            </view>
+            <view class="box_bottom">
+                <view>共2件商品</view>
+                <p>总计：<span>￥<i>9.99</i></span></p>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="bg">
+    <view class="container">
+        <view class="box">
+            <view class="box_top">
+                <view>
+                    <image src="../../../image/time.png"></image>
+                    <view>2019-01-04</view>
+                </view>
+                <p class="green">待付款</p>
+            </view>
+            <view class="box_cp"> 
+                <image src="../../../image/cplist.png"></image>
+                <view class="box_cp_text">
+                    <view>沙窝林子天津沙窝萝卜</view>
+                    <p>数量：8</p>
+                </view>
+                <view class="box_cp_right">
+                    <p>￥9.99</p>
+                    <view>￥<span>9.99</span></view>
+                </view>
+            </view>
+            <view class="box_cp"> 
+                <image src="../../../image/cplist.png"></image>
+                <view class="box_cp_text">
+                    <view>沙窝林子天津沙窝萝卜</view>
+                    <p>数量：8</p>
+                </view>
+                <view class="box_cp_right">
+                    <p>￥9.99</p>
+                    <view>￥<span>9.99</span></view>
+                </view>
+            </view>
+            <view class="box_bottom">
+                <view>共2件商品</view>
+                <p>总计：<span>￥<i>9.99</i></span></p>
+            </view>
+        </view>
+    </view>
+</view>

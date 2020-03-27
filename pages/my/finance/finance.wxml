@@ -1,0 +1,57 @@
+<!--pages/my/finance/finance.wxml-->
+<view class="topline"></view>
+<view class="container">
+    <view class="top">
+        <view class="top_text">
+            <view class="top_left">
+                <view>账户余额</view>
+                <p><span>1555.00</span>元</p>
+            </view>
+            <view class="top_right">
+                <view><image src="../../../image/zhuyi.png"></image>佣金规则</view>
+                <div>提现</div>
+            </view>
+            <view class="top_bottom">
+                <view>已结算:2550元</view>
+                <view>累计收益:2145元</view>
+            </view>
+        </view>
+        <image class="top_bg" src="../../../image/bg.png"></image>
+    </view>
+</view>
+<view class="container">
+    <view class="box">
+        <view class="title">
+            <i></i>
+            <view>收益明细</view>
+        </view>
+        <view class="list">
+            <view class="list_left">
+                <view>S39587741567</view>
+                <p>2020-03-02 09:41:58</p>
+            </view>
+            <view class="list_right su">+5.80元</view>
+        </view>
+        <view class="list">
+            <view class="list_left">
+                <view>S39587741567</view>
+                <p>2020-03-02 09:41:58</p>
+            </view>
+            <view class="list_right">-5.80元</view>
+        </view>
+        <view class="list">
+            <view class="list_left">
+                <view>S39587741567</view>
+                <p>2020-03-02 09:41:58</p>
+            </view>
+            <view class="list_right su">+5.80元</view>
+        </view>
+        <view class="list">
+            <view class="list_left">
+                <view>S39587741567</view>
+                <p>2020-03-02 09:41:58</p>
+            </view>
+            <view class="list_right">-5.80元</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,236 @@
+/* pages/my/commanderOrg/commanderOrg.wxss */
+page {
+    background: #f7f7f7;
+}
+
+.top {
+    position: relative;
+
+}
+
+.top>image {
+    width: 750rpx;
+    height: 338rpx;
+    display: block;
+}
+
+.my {
+    position: absolute;
+    left: 30rpx;
+    width: 92%;
+    top: 34rpx;
+}
+.my_left{
+    float: left;
+}
+.my_left>image {
+    width: 100rpx;
+    height: 100rpx;
+    display: block;
+    float: left;
+    margin-right: 20rpx;
+}
+
+.my_left>view {
+    font-size: 36rpx;
+    color: #ffffff;
+    float: left;
+}
+.my_left>view>view{
+    font-size: 34rpx;
+    color: #ffffff;
+}
+.my_left>view>p{
+    font-size: 28rpx;
+    text-align: center;
+    margin-top: 10rpx;
+    color: #ffffff;
+    display: block;
+    
+}
+.my_right{
+    color: #ffffff;
+    float: right;
+    width: 22%;
+}
+.my_right>view{
+    font-size: 26rpx;
+    margin-top: 14rpx;
+    text-align: right;
+}
+.my_right>view>image{
+    width: 25rpx;
+    height: 30rpx;
+}
+
+.order{
+    border-radius: 20rpx;
+    background: #ffffff;
+    padding: 30rpx;
+    position: relative;
+    overflow: hidden;
+    margin-top: -25%;
+}
+.order_title{
+    font-size: 30rpx;
+    color: #333333;
+
+}
+.order_title>p{
+    float: right;
+    color: #e94638;
+    font-size: 28rpx;
+    border: 1px solid #e94638;
+    padding: 4rpx 20rpx;
+    border-radius: 10rpx;
+}
+.order_title>p>image{
+    width: 26rpx;
+    height: 26rpx;
+    padding-right: 6rpx;
+}
+.order_icon{
+    width: 25%;
+    float: left;
+    text-align: center;
+    margin-top: 30rpx;
+}
+.order_icon>image{
+    width: 56rpx;
+    height: 50rpx;
+    margin: 0 auto;
+}
+.order_icon>view{
+    font-size: 28rpx;
+    color: #555555;
+}
+.list{
+    background: #ffffff;
+    border-radius: 20rpx;
+    margin-top: 30rpx;
+    box-shadow: 0px 2px 10px #f1f1f1;
+}
+.list_box>image:first-child{
+    width: 36rpx;
+    height: 36rpx;
+    float: left;
+    padding-left: 30rpx;
+}
+.list_box{
+    padding: 30rpx 0;
+    border-bottom: 1px solid #eeeeee;
+    overflow: hidden;
+}   
+.list_box>view{
+    font-size: 30rpx;
+    color: #333333;
+    float: left;
+    margin-left: 20rpx;
+}
+.list_box>image:last-child{
+    float: right;
+    width: 14rpx;
+    height: 23rpx;
+    margin-right: 30rpx;
+}
+.list_box:last-child{
+    border-bottom: none;
+}
+.erweima{
+    margin-top: 30rpx;
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+.erweima>view{
+    font-size: 30rpx;
+    color: #e94638;
+}
+.erweima>image{
+    width: 248rpx;
+    height: 248rpx;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20rpx;
+}
+
+.notice{
+    background: #ffe9ba;
+    padding: 20rpx 0;
+    overflow: hidden;
+}
+.notice image{
+    width: 40rpx;
+    height: 35rpx;
+    float: left;
+    margin-right: 10rpx;
+    margin-top: 4rpx;
+}
+swiper{
+    height: 40rpx;
+    float: left;
+    width: 80%;
+}
+.notice text{
+    font-size: 28rpx;
+    color: #ff9600;
+}
+
+.my_right p{
+    display: block;
+    overflow: hidden;
+}
+.my_right picker{
+    float: left;
+}
+.my_right>p>image{
+    width:22rpx;
+    height: 12rpx;
+    float: right;
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+
+}
+.picker{
+    font-size: 28rpx;
+    color: #ffffff;
+}
+.order_list{
+    text-align: center;
+    float: left;
+    width: 32.333333%;
+}
+.order_list>p{
+    color: #e94638;
+    font-size: 30rpx;
+}
+.order_list>p>span{
+    font-size: 40rpx;
+    font-weight: bold;
+    color: #e94638;
+}
+.order_list>view{
+    color: #999999;
+    font-size: 28rpx;
+}
+.line_order{
+    width: 1px;
+    height: 66rpx;
+    display: block;
+    background: #e8e8e8;
+    float: left;
+    margin-top: 30rpx;
+}
+.order_box{
+    margin-top: 30rpx;
+    overflow: hidden;
+}
+.btn{
+    background: #e94638;
+    color: #ffffff;
+    text-align: center;
+    height: 80rpx;
+    width: 100%;
+    border-radius: 10rpx;
+    line-height: 80rpx;
+    margin: 30rpx 0;
+}

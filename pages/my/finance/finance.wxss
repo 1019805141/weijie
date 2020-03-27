@@ -1,0 +1,130 @@
+/* pages/my/finance/finance.wxss */
+page{
+    background: #f7f7f7;
+}
+.top{
+    position: relative;
+    margin-top: 30rpx;
+}
+.top_bg{
+    width: 700rpx;
+    border-radius: 20rpx;
+    height: 308rpx;
+    display: block;
+}
+.top_text{
+    top: 30rpx;
+    left: 30rpx;
+    position: absolute;
+    width: 93%;
+    height: 83%;
+}
+.top_left{
+    float: left;
+    color: #ffffff;
+}
+.top_left>view{
+    font-size: 30rpx;
+    margin-bottom: 10rpx;
+}
+.top_left>p{
+    font-size: 30rpx;
+    display: block;
+}
+.top_left>p>span{
+    font-size: 54rpx;
+    font-weight: bold;
+}
+.top_right{
+    float: right;
+}
+.top_right>view{
+    font-size: 28rpx;
+    color: #ffffff;
+}
+.top_right>view>image{
+    width: 30rpx;
+    height: 30rpx;
+    padding-right: 4rpx;
+}
+.top_right>div{
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    background: #ffb702;
+    border-radius: 50rpx;
+    padding: 14rpx 44rpx;
+    margin-top: 20rpx;
+}
+.top_bottom{
+    color: #ffffff;
+    clear: both;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.top_bottom view:first-child{
+    float: left;
+    font-size: 28rpx;
+}
+.top_bottom view:last-child{
+    float: right;
+    font-size: 28rpx;
+}
+.box{
+    background: #ffffff;
+    padding: 10rpx 20rpx;
+    border-radius: 20rpx;
+    box-shadow: 0px 2px 10px #f1f1f1;
+}
+.title{
+    margin: 30rpx 0;
+  }
+  .title>i{
+      background: #e94638;
+      border-bottom-right-radius:50px;
+      border-bottom-left-radius:50px;
+      border-top-right-radius:50px;
+      border-top-left-radius:50px;
+      width: 12rpx;
+      height: 34rpx;
+      display: block;
+      float: left;
+      margin-top: 6rpx;
+      margin-right: 10rpx;
+  }
+  .title>view{
+      font-size: 32rpx;
+  }
+  .box{
+      margin-top: 30rpx;
+  }
+  .list_left{
+      float: left;
+  }
+  .list_left>view{
+      color: #333333;
+      font-size: 28rpx;
+  }
+  .list_left>p{
+    font-size: 26rpx;
+    color: #999999;  
+  }
+  .list_right{
+      float: right;
+      font-size: 28rpx;
+      margin-top: 20rpx;
+  }
+  .su{
+      color: #ffb702;
+  }
+  .list{
+      overflow: hidden;
+      padding-bottom: 20rpx;
+      border-bottom: 1px solid #f0f0f0;
+      margin-bottom: 20rpx;
+  }
+  .list:last-child{
+      border-bottom: none;
+      margin-bottom: 0;
+  }

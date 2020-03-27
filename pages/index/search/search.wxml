@@ -1,0 +1,103 @@
+<!--pages/index/search/search.wxml-->
+<view class="topline"></view>
+<view class="bg">
+    <view class="container">
+        <view class="index_top_search">
+            <image src="../../../image/search.png" style="{{inputImg}}"></image>
+            <input type="text" placeholder="搜索" bindinput="searchInput" placeholder-style="color:#808080;text-align:center" />
+          </view>
+          <view class="index_cp">
+            <image src="../../../image/cpimg.png"></image>
+            <view class="index_cp_right">
+              <view class="index_cp_right_title">沙窝林子天津沙窝萝卜</view>
+              <p>新鲜美味，富含多种维生素C</p>
+              <view class="index_cp_right_bq">次日到达</view>
+              <view class="index_cp_fenshu">已售出：999份  剩余：<span>23</span>份</view>
+              <view class="index_cp_jiage">
+                <p>团购价:<span>￥4.00</span></p>
+                <view>立即抢购</view>
+              </view>
+            </view>
+          </view>
+          <view class="index_cp">
+            <image src="../../../image/cpimg.png"></image>
+            <view class="index_cp_right">
+              <view class="index_cp_right_title">沙窝林子天津沙窝萝卜</view>
+              <p>新鲜美味，富含多种维生素C</p>
+              <view class="index_cp_right_bq">次日到达</view>
+              <view class="index_cp_fenshu">已售出：999份  剩余：<span>23</span>份</view>
+              <view class="index_cp_jiage">
+                <p>团购价:<span>￥4.00</span></p>
+                <view>立即抢购</view>
+              </view>
+            </view>
+          </view>
+          <view class="index_cp">
+            <image src="../../../image/cpimg.png"></image>
+            <view class="index_cp_right">
+              <view class="index_cp_right_title">沙窝林子天津沙窝萝卜</view>
+              <p>新鲜美味，富含多种维生素C</p>
+              <view class="index_cp_right_bq">次日到达</view>
+              <view class="index_cp_fenshu">已售出：999份  剩余：<span>23</span>份</view>
+              <view class="index_cp_jiage">
+                <p>团购价:<span>￥4.00</span></p>
+                <view>立即抢购</view>
+              </view>
+            </view>
+          </view>
+          
+    </view>
+</view>
+<view class="container">
+    <view class="title">
+        <i></i>
+        <view>精选产品</view>
+    </view>
+    <view class="row">
+        <view class="list_box">
+            <image src="../../../image/cpimg2.png"></image>
+            <view>
+                <view class="list_bq"><p>热销</p>小青菜 约400g</view>
+                <view class="list_ms">火锅食材 新鲜蔬菜</view>
+                <view class="list_jine">
+                  <p>￥<span>4.99</span></p>
+                  <view>立即抢购</view>
+                </view>
+            </view>
+        </view>
+        <view class="list_box">
+          <image src="../../../image/cpimg2.png"></image>
+          <view>
+              <view class="list_bq"><p>热销</p>小青菜 约400g</view>
+              <view class="list_ms">火锅食材 新鲜蔬菜</view>
+              <view class="list_jine">
+                <p>￥<span>4.99</span></p>
+                <view>立即抢购</view>
+              </view>
+          </view>
+      </view>
+      <view class="list_box">
+        <image src="../../../image/cpimg2.png"></image>
+        <view>
+            <view class="list_bq"><p>热销</p>小青菜 约400g</view>
+            <view class="list_ms">火锅食材 新鲜蔬菜</view>
+            <view class="list_jine">
+              <p>￥<span>4.99</span></p>
+              <view>立即抢购</view>
+            </view>
+        </view>
+    </view>
+    <view class="list_box">
+      <image src="../../../image/cpimg2.png"></image>
+      <view>
+          <view class="list_bq"><p>热销</p>小青菜 约400g</view>
+          <view class="list_ms">火锅食材 新鲜蔬菜</view>
+          <view class="list_jine">
+            <p>￥<span>4.99</span></p>
+            <view>立即抢购</view>
+          </view>
+      </view>
+  </view>
+    </view>
+    
+</view>

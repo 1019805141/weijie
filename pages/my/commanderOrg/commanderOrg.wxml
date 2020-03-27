@@ -1,0 +1,104 @@
+<!--pages/my/commanderOrg/commanderOrg.wxml-->
+<view class="notice">
+    <view class="container">
+        <image src="../../../image/notice.png"></image>
+        <swiper class="swiper_container" vertical="true" autoplay="5000" circular="true" interval="4000">
+            <block>
+              <swiper-item>
+                <navigator class="swiper_item" open-type="navigate" hover-class="none">
+                  <text class="notice_text">这里是通知公告这里是通知公告...</text>
+                </navigator>
+              </swiper-item>
+              <swiper-item>
+                <navigator class="swiper_item" open-type="navigate" hover-class="none">
+                  <text class="notice_text">这里是通知公告这里是通知公告...</text>
+                </navigator>
+              </swiper-item>
+              <swiper-item>
+                <navigator class="swiper_item" open-type="navigate" hover-class="none">
+                  <text class="notice_text">这里是通知公告这里是通知公告...</text>
+                </navigator>
+              </swiper-item>
+              <swiper-item>
+                <navigator class="swiper_item" open-type="navigate" hover-class="none">
+                  <text class="notice_text">这里是通知公告这里是通知公告...</text>
+                </navigator>
+              </swiper-item>
+            </block>
+          </swiper>
+    </view>
+</view>
+<view class="top">
+    <view class="my">
+        <view class="my_left">
+            <image src='../../../image/mytx.png'></image>
+            <view>
+                <view>您好，团长小张</view>
+                <p>报业文苑A区便利店</p>
+            </view>
+          
+        </view>
+        <view class="my_right">
+            <p>
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                    <view class="picker">
+                        {{defult}}
+                    </view>
+                  </picker>
+                  <image src="../../../image/xiajiantou.png"></image>
+            </p>
+            <view>
+                <image src="../../../image/xiaoxi.png"></image>
+                消息
+            </view>
+          
+        </view>
+
+    </view>
+    <image src="../../../image/mybg.png"></image>
+</view>
+<view class="container">
+    <view class="order">
+        <view class="order_title">团长服务热线：18512341234<p><image src="../../../image/tel.png"></image>拨打</p></view>
+        <view class="order_box">
+            <view class="order_list">
+                <p><span>300</span>元</p>
+                <view>佣金</view>
+            </view>
+            <view class="line_order"></view>
+            <view class="order_list">
+                <p><span>888</span>人</p>
+                <view>社区团员</view>
+            </view>
+            <view class="line_order"></view>
+            <view class="order_list">
+                <p><span>23</span>件</p>
+                <view>未取货订单</view>
+            </view>
+        </view>
+    </view> 
+    <view class="btn">扫码核销</view>
+    <view class="list">
+        <view class="list_box">
+            <image src="../../../image/mylist1.png"></image>
+            <view>财务管理</view>
+            <image src="../../../image/jiantou.png"></image>
+        </view>
+        <view class="list_box">
+            <image src="../../../image/mylist2.png"></image>
+            <view>社区订单</view>
+            <image src="../../../image/jiantou.png"></image>
+        </view>
+        <view class="list_box">
+            <image src="../../../image/mylist3.png"></image>
+            <view>核销记录</view>
+            <image src="../../../image/jiantou.png"></image>
+        </view>
+        <view class="list_box">
+            <image src="../../../image/mylist7.png"></image>
+            <view>到货验收</view>
+            <image src="../../../image/jiantou.png"></image>
+        </view>
+    </view>
+
+</view>

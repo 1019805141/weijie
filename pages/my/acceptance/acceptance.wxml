@@ -1,0 +1,78 @@
+<!--pages/my/acceptance/acceptance.wxml-->
+<view class="topline"></view>
+<view class="container">
+    <view class="title">
+        <i></i>
+        <view>到店商品</view>
+    </view>
+    <view class="table">
+        <view class="table_top">
+            <view class="wid20">全选</view>
+            <view class="wid40">商品名称</view>
+            <view class="wid40">商品数量</view>
+        </view>
+        <checkbox-group bindchange="checkboxChange">
+            <view class="table_content" wx:for="{{list}}">
+                <view class="wid20">
+                    <checkbox class="weui-check" value="{{item.id}}" checked="{{item.checked}}" />
+                </view>
+                <view class="wid40">{{item.name}}</view>
+                <view class="wid40 num">{{item.num}}</view>
+            </view>
+        </checkbox-group>
+    </view>
+    <view class="btn_red">正常验收</view>
+    <view class="btn_ye" bindtap="powerDrawer" data-statu="open">缺损验收</view>
+</view>
+
+
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+ <!--drawer content-->
+ <view class="drawer_title">缺损验收</view>
+ <view class="drawer_content">
+    <view class="table table2">
+        <view class="table_top2">
+            <view>商品名称</view>
+            <view>商品数量</view>
+            <view>实际到货</view>
+        </view>
+            <view class="table_content2">
+                <view>
+                    榴莲
+                </view>
+                <view class="num">5</view>
+                <view class="">
+                    <input type="text" placeholder="在此输入" />
+                </view>
+            </view>
+            <view class="table_content2">
+                <view>
+                    榴莲
+                </view>
+                <view class="num">5</view>
+                <view class="">
+                    <input type="text" placeholder="在此输入" />
+                </view>
+            </view>
+            <view class="table_content2">
+                <view>
+                    榴莲
+                </view>
+                <view class="num">5</view>
+                <view class="">
+                    <input type="text" placeholder="在此输入" />
+                </view>
+            </view>
+    </view>
+ </view>
+ <view class="title">情况描述</view>
+ <textarea name="" id="" cols="30" rows="10" placeholder="在此输入情况描述..."></textarea>
+ <view class="btn_group">
+     <view>提交</view>
+     <view>取消</view>
+ </view>
+</view>

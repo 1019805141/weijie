@@ -1,0 +1,31 @@
+<!--pages/my/cashWithdrawal/cashWithdrawal.wxml-->
+<view class="topline"></view>
+<view class="bg">
+    <view class="container">
+        <view class="pay">
+            <view>选择账户：</view>
+            <view><image src="../../../image/we.png"></image>微信钱包</view>
+        </view>
+    </view>
+</view>
+<view class="jiange"></view>
+<view class="bg">
+    <view class="container">
+        <view class="price">
+            提现金额：300.00元
+        </view>
+        <view class="input_box">
+            <view>￥</view>
+            <input type="number" placeholder="请输入提现金额" placeholder-style="color:#cdcdcd" />
+            <p>最高提现</p>
+        </view>
+        <view class="input_box2">
+            <view>备注</view>
+            <textarea placeholder="请输入备注" placeholder-style="color:#cdcdcd"></textarea>
+        </view>
+    </view>
+</view>
+<view class="container">
+    <view class="btn">申请提现</view>
+    <view class="mingxi">提现明细</view>
+</view>

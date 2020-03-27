@@ -1,0 +1,210 @@
+<!--index.wxml-->
+<view class="navbar" style='height:{{navH}}px'>
+  <view class="navbar-action-wrap  {{showHome ? 'navbar-action-group' : ''}} row item-center" wx:if="{{showNav}}">
+    <block wx:if="{{showHome}}">
+      <ss-icon name="back" color="#333" size="15px" custom-class="navbar-action_item first" bind:click="navBack">
+      </ss-icon>
+      <ss-icon name="index" color="#333" size="16px" custom-class="navbar-action_item" bind:click="toIndex"></ss-icon>
+    </block>
+    <block wx:else>
+      <ss-icon name="back" color="#fff" size="18px" custom-class="navbar-action_item first" bind:click="navBack">
+      </ss-icon>
+    </block>
+
+  </view>
+  <view class='navbar-title'>
+    <image src="../../image/logo.png" bindtap="dsad" class="logo"></image>
+    <view>薇姐爱家</view>
+
+  </view>
+</view>
+
+<view class="container">
+  <view class="index_top">
+    <view class="index_tx">
+      <image src="../../image/mytx.png"></image>
+      <view class="index_tx_text">
+        <view>社区团长小张</view>
+        <p>
+          <image src="../../image/dw.png"></image>自提点：报业文苑南门A区-南门
+        </p>
+      </view>
+      <view class="index_tx_right">
+        <image src="../../image/ren.png"></image>
+        更换>
+      </view>
+    </view>
+    <view class="index_top_bottom">
+      <view class="index_top_fenx" bindtap="showModal">
+        <image src="../../image/fenxiang1.png"></image>
+        分享
+      </view>
+      <view class="index_top_search">
+        <image src="../../image/search.png" style="{{inputImg}}"></image>
+        <input type="text" placeholder="查找" bindinput="searchInput"
+          placeholder-style="color:#808080;text-align:center" />
+      </view>
+    </view>
+  </view>
+</view>
+<view class="jiange"></view>
+<view class="container">
+  <view class="notice">
+    <image src="../../image/tongzhi.png"></image>
+    <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="4000">
+      <block>
+        <swiper-item>
+          <navigator class="swiper_item" open-type="navigate" hover-class="none">
+            <p>【通知公告】</p>
+            <text class="notice_text">今日白菜特卖今日白菜特卖今日白菜特卖！！</text>
+          </navigator>
+        </swiper-item>
+        <swiper-item>
+          <navigator class="swiper_item" open-type="navigate" hover-class="none">
+            <p>【通知公告】</p>
+            <text class="notice_text">今日白菜特卖今日白菜特卖今日白菜特卖！！</text>
+          </navigator>
+        </swiper-item>
+        <swiper-item>
+          <navigator class="swiper_item" open-type="navigate" hover-class="none">
+            <p>【通知公告】</p>
+            <text class="notice_text">今日白菜特卖今日白菜特卖今日白菜特卖！！</text>
+          </navigator>
+        </swiper-item>
+        <swiper-item>
+          <navigator class="swiper_item" open-type="navigate" hover-class="none">
+            <p>【通知公告】</p>
+            <text class="notice_text">今日白菜特卖今日白菜特卖今日白菜特卖！！</text>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="daojishi">
+    <image src="../../image/t_title.png"></image>
+    <view class='name_right'>
+      <p>距离结束</p><text>{{day}}</text>
+      <p>天</p> <text>{{hou}}</text>
+      <p>时</p><text>{{min}}</text>
+      <p>分</p><text>{{sec}}</text>
+      <p>秒</p>
+    </view>
+  </view>
+</view>
+<view class="container">
+  <view class="icon_group">
+    <view class="icon_box">
+      <image src="../../image/icon1.png"></image>
+      <view>时令水果</view>
+    </view>
+    <view class="icon_box">
+      <image src="../../image/icon2.png"></image>
+      <view>新鲜蔬菜</view>
+    </view>
+    <view class="icon_box">
+      <image src="../../image/icon3.png"></image>
+      <view>肉蛋熟食</view>
+    </view>
+    <view class="icon_box">
+      <image src="../../image/icon4.png"></image>
+      <view>活鲜水产</view>
+    </view>
+    <view class="icon_box">
+      <image src="../../image/icon5.png"></image>
+      <view>粮油调味</view>
+    </view>
+    <view class="icon_box">
+      <image src="../../image/icon6.png"></image>
+      <view>日用百货</view>
+    </view>
+    <view class="icon_box">
+      <image src="../../image/icon7.png"></image>
+      <view>休闲食品</view>
+    </view>
+    <view class="icon_box">
+      <image src="../../image/icon8.png"></image>
+      <view>安心乳品</view>
+    </view>
+    <view class="icon_box">
+      <image src="../../image/icon9.png"></image>
+      <view>酒水饮料</view>
+    </view>
+    <view class="icon_box">
+      <image src="../../image/icon10.png"></image>
+      <view>更多分类</view>
+    </view>
+  </view>
+</view>
+<view class="jiange"></view>
+<view class="container">
+  <scroll-view scroll-x class="scroll-x weili">
+    <view wx:for="{{leixingList}}" wx:key="{{index}}" class="view-parent2">
+      <view bindtap='dianjis' data-index='{{index}}' data-label="{{item.id}}" data-value="{{item.value}}"
+        class="view-item {{index==currentIndexs?'acrivws':''}}">
+        {{item.label}}</view>
+    </view>
+  </scroll-view>
+  <view class="index_cp" wx:for="{{list}}" wx:key="key">
+    <image src="../../image/cpimg.png"></image>
+    <view class="index_cp_right">
+      <view class="index_cp_right_title">沙窝林子天津沙窝萝卜</view>
+      <p>新鲜美味，富含多种维生素C</p>
+      <view class="index_cp_right_bq">次日到达</view>
+      <view class="index_cp_fenshu">已售出：999份 剩余：<span>23</span>份</view>
+      <view class="index_cp_jiage">
+        <p>团购价:<span>￥4.00</span></p>
+        <view>
+          <!-- 加减 -->
+          <view class="stepper">
+            <text class="{{minusStatus}} jia jia2" bindtap="bindMinus" wx:if="{{num != 0}}">-</text>
+            <view wx:if="{{num != 0}}">{{num}}</view>
+            <text class="normal jia jia1" bindtap="bindPlus">+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<fid-btn p='{{p}}'></fid-btn>
+
+<view class="modal modal-bottom-dialog" hidden="{{hideFlag}}">
+  <view class="modal-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-positon" animation="{{animationData}}">
+    <!--  -->
+
+    <button class="fx_icon" open-type="share" style="background: none;">
+      <image src="../../image/fx_icon1.png"></image>
+      <view>微信好友</view>
+    </button>
+    <view class="fx_icon" bindtap="fenxiang">
+      <image src="../../image/fx_icon2.png"></image>
+      <view>生成海报</view>
+    </view>
+    <view class='Mcancel' bindtap='mCancel'>
+      <text>取消</text>
+    </view>
+
+  </view>
+</view>
+
+
+<view class="fenxiangbg" style="{{fenxiang}}">
+  <image src="../../image/hide.png" class="fenxiang_hide" bindtap="fenxiangHide"></image>
+  <view class="fenxiangbg_box">
+    <view class="fenxiangcp">
+      <image src="../../image/fenxcp.png"></image>
+      <view>沙窝林子天津萝卜</view>
+      <p>￥4.00</p>
+    </view>
+    <view class="fenxiang_er">
+      <image src="../../image/fenxiang_erweima.png"></image>
+      <view class="fenxiang_er_text">
+        <view>长按识别小程序二维码</view>
+        <p>薇姐爱团Go 有用有趣有温度</p>
+      </view>
+    </view>
+    <image class="fenxiangbg_box_bg" src="../../image/fenxbg.jpg"></image>
+  </view>
+  <image src="../../image/btn.png" class="fenxiang_btn"></image>
+</view>

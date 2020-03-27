@@ -1,0 +1,68 @@
+/* pages/my/setCommander/setCommander.wxss */
+.title{
+    margin: 30rpx 0;
+  }
+  .title>i{
+      background: #e94638;
+      border-bottom-right-radius:50px;
+      border-bottom-left-radius:50px;
+      border-top-right-radius:50px;
+      border-top-left-radius:50px;
+      width: 12rpx;
+      height: 34rpx;
+      display: block;
+      float: left;
+      margin-top: 6rpx;
+      margin-right: 10rpx;
+  }
+  .title>view{
+      font-size: 32rpx;
+  }
+
+  .list{
+    border-radius: 10rpx;
+    background: #ffffff;
+    padding: 30rpx 20rpx;
+    overflow: hidden;
+    margin-top: 20rpx;
+}
+.list>image{
+    width: 98rpx;
+    height: 98rpx;
+    float: left;
+    margin-right: 20rpx;
+}
+.list_text>view{
+    font-size: 30rpx;
+    display: inline-block;
+    margin-right: 10rpx;
+}
+.list_text>p{
+    color: #e94638;
+    font-size: 28rpx;
+}
+.list_text>p>image{
+    width: 19rpx;
+    height: 24rpx;
+
+}
+.list_text{
+    float: left;
+    width: 60%;
+}
+.list_text>span{
+    font-size: 26rpx;
+    display: block;
+    color: #666666;
+    margin-top: 10rpx;
+}
+.list_right{
+    float: right;
+    background: #e94638;
+    border-radius: 100rpx;
+    color: #ffffff;
+    text-align: center;
+    font-size: 30rpx;
+    padding: 6rpx 26rpx;
+    margin-top: 20rpx;
+}

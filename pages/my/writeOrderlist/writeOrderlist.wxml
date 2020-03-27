@@ -1,0 +1,65 @@
+<!--pages/my/writeOrderlist/writeOrderlist.wxml-->
+<view class="topline"></view>
+<view class="nav_tab">
+    <view wx:for="{{list}}" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' bindtap="selected">
+        {{item}}
+        <view class="{{selected==index?'nav_underline':''}}"></view>
+    </view>
+</view>
+<view class="container">
+    <view class="index_top_search">
+        <image src="../../../image/search.png" style="{{inputImg}}"></image>
+        <input type="text" placeholder="用户昵称/订单号" bindinput="searchInput" placeholder-style="color:#808080;padding-left:30rpx" />
+      </view>
+      <view class="list">
+        <view class="list_top">
+            订单号：2020123132123132<p class="yellow">已核销</p>
+        </view>
+        <view class="list_cp">
+            <image src="../../../image/cpimg.png"></image>
+            <view class="list_cp_text">
+                <view>沙窝林子天津沙窝萝卜</view>
+                <p>￥<span>9.99</span></p>
+            </view>
+            <view class="list_cp_right">X1</view>
+        </view>
+        <view class="list_bottom">
+            <view>下单时间：2020-03-05 13:00:00</view>
+            <view>用户名：张阿七</view>
+        </view>
+      </view>   
+      <view class="list">
+        <view class="list_top">
+            订单号：2020123132123132<p class="yellow">已核销</p>
+        </view>
+        <view class="list_cp">
+            <image src="../../../image/cpimg.png"></image>
+            <view class="list_cp_text">
+                <view>沙窝林子天津沙窝萝卜</view>
+                <p>￥<span>9.99</span></p>
+            </view>
+            <view class="list_cp_right">X1</view>
+        </view>
+        <view class="list_bottom">
+            <view>下单时间：2020-03-05 13:00:00</view>
+            <view>用户名：张阿七</view>
+        </view>
+      </view>  
+      <view class="list">
+        <view class="list_top">
+            订单号：2020123132123132<p class="red">未核销</p>
+        </view>
+        <view class="list_cp">
+            <image src="../../../image/cpimg.png"></image>
+            <view class="list_cp_text">
+                <view>沙窝林子天津沙窝萝卜</view>
+                <p>￥<span>9.99</span></p>
+            </view>
+            <view class="list_cp_right">X1</view>
+        </view>
+        <view class="list_bottom">
+            <view>下单时间：2020-03-05 13:00:00</view>
+            <view>用户名：张阿七</view>
+        </view>
+      </view>  
+</view>
