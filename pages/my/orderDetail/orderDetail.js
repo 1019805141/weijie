@@ -261,7 +261,7 @@ Page({
       tuisong:'display:none'
     })
     wx.requestSubscribeMessage({
-      tmplIds: ['aIaCLzzGQyFCo7JrRhilddWEatlILCTCRf3Vm4WF-kY'],
+      tmplIds: ['db9R-YHZFAL8tCKgDGsCahZty25dVKJouQOya1LQAm4'],
       success (res) {
         wx.navigateBack({
           delta: 1
