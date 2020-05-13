@@ -1,0 +1,78 @@
+/* pages/my/setPhone/setPhone.wxss */
+/* pages/my/commander/commander.wxss */
+page{
+    background: #f7f7f7;
+}
+.input>view{
+    float: left;
+    width: 150rpx;
+    font-size: 30rpx;
+}
+.input>input{
+    float: left;
+}
+.input{
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    font-size: 30rpx;
+    background: #ffffff;
+}
+.input>p{
+    background: #e94638;
+    color: #ffffff;
+    float: right;
+    text-align: center;
+    padding: 8rpx 16rpx;
+    font-size: 28rpx;
+    border-radius: 6rpx;
+}
+.input>span{
+    color: #888888;
+    float: left;
+    width: 70%;
+}
+.bg{
+    background: #ffffff;
+}
+.input>image{
+    width:14rpx;
+    height: 23rpx;
+    float: right;
+    margin-top: 10rpx;
+}
+.input picker{
+    float: left;
+
+}
+.input:last-child{
+    border-bottom: none;
+}
+.btn{
+    background: #e94638;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 10rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: 60rpx;
+}
+.input>button{
+    background: #e94638;
+    color: #ffffff;
+    float: right;
+    text-align: center;
+    padding: 8rpx 16rpx;
+    font-size: 28rpx;
+    border-radius: 6rpx;
+    min-height: 60rpx!important;
+    width: 180rpx!important;
+    height: 60rpx!important;
+    font-weight: normal;
+  }
+  button[disabled] {
+    color: #ffffff !important;
+    background: #ff7b70 !important;
+    border-color: none !important;
+    }

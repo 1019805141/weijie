@@ -1,18 +1,37 @@
 // pages/index/notice/notice.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    id:null,
+    detail:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that =this
+    that.setData({
+      id:options.id
+    })
 
+    wx.showLoading({ //显示 loading 提示框
+      title: "加载中..."
+    })
+    app.http('api/noticeDetail', {
+      id: that.data.id
+    }, "GET")
+    .then(res => {
+      console.log(res, '公告')
+      that.setData({
+        detail:res.data.noticeDetail
+      })
+      wx.hideLoading()
+    })
   },
 
   /**

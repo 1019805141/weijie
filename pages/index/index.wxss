@@ -24,10 +24,11 @@
 .navbar {
   width: 100%;
   overflow: hidden;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
+  background: #ffffff;
 }
 
 
@@ -81,6 +82,7 @@
   width: 98rpx;
   height: 98rpx;
   float: left;
+  border-radius: 50%;
 }
 
 .index_tx_text {
@@ -160,6 +162,7 @@
 
 .index_top {
   overflow: hidden;
+  margin-top: 180rpx;
 }
 
 .index_top_bottom {
@@ -169,7 +172,7 @@
 
 .swiper_container {
   height: 40rpx;
-  width: 94%;
+  width: 84%;
   background: #fff;
   border-radius: 0px 0px 5px 5px;
   padding: 10rpx 0 8rpx 0;
@@ -193,7 +196,7 @@
   color: #808080;
   font-size: 26rpx;
   margin-top: -8rpx;
-  letter-spacing: 3rpx
+  letter-spacing: 3rpx;
 }
 
 .notice>image {
@@ -390,6 +393,10 @@
   border-bottom: 1px solid #e4e4e4;
   padding-bottom: 30rpx;
   overflow: hidden;
+  margin-bottom: 30rpx;
+}
+.index_cp:last-child{
+  border-bottom: none;
 }
 
 .index_cp>image {
@@ -473,7 +480,14 @@
   font-weight: normal;
 }
 
-
+.right_notice{
+  float: right;
+  font-size: 26rpx;
+  padding: 10rpx 0;
+  z-index: 10000;
+  position: absolute;
+  right: 30rpx;
+}
 
 
 .arrow {
@@ -655,7 +669,7 @@ button {
 /*主容器*/
 
 .stepper { 
-  width: 80px; 
+  width: 86px; 
   height: 26px; 
   /*给主容器设一个边框*/
   border-radius: 3px; 
@@ -718,11 +732,39 @@ button {
 .stepper view{
   float: right;
   margin: 0 10rpx;
-  margin-right: 60rpx;
+  margin-right: 58rpx;
 }
 .jia2{
   float: left;
   margin-left: 20rpx;
   color: #777777; 
   background: #dfdfdf;
+}
+.zanwu{
+  margin: 50rpx 0;
+}
+.zanwu image{
+  width: 305rpx;
+  height:331rpx;
+  display: block;
+  margin: 0 auto;
+}
+.zanwu text{
+  text-align: center;
+  margin-top: 30rpx;
+  display: block;
+  font-size: 28rpx;
+  color: #a6a6a9;
+}
+.notice_p{
+  font-size: 28rpx;
+  float: left;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+.index_banner{
+}
+.index_banner image{
+  width: 100%;
+  border-radius: 20rpx;
 }

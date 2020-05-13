@@ -1,0 +1,46 @@
+<!--pages/my/aftermarket/aftermarket.wxml-->
+<view class="topline"></view>
+<view class="nav_tab">
+    <view wx:for="{{list}}" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' data-id="{{item.id}}"
+        bindtap="selected">
+        {{item.name}}
+        <view class="{{selected==index?'nav_underline':''}}"></view>
+    </view>
+</view>
+
+<view class="zanwu" style="{{orderList.length>0?'display:none':'display:block'}}">
+    <image src="../../../image/zanwu.png" ></image>
+    <text>暂无退款信息</text>
+  </view>
+
+
+<view class="bg" wx:for="{{orderList}}" wx:key="key" style="{{orderList.length>0?'display:block':'display:none'}}">
+    <view class="container">
+        <view class="box" bindtap="goDetail" data-id="{{item.o_id}}">
+            <view class="box_top">
+                <view>
+                    <view>订单号：{{item.get_order_info.order_number}}</view>
+                </view>
+                <p class="redbtn">处理</p>
+            </view>
+            <view class="box_cp" wx:for="{{item.get_order_info.goods_list}}" wx:for-index='index' wx:for-item="items">
+                <image src="{{imgUrl + items.get_goods_info.img}}"></image>
+                <view class="box_cp_text">
+                    <view>{{items.get_goods_info.name}}</view>
+                    <p>数量：{{items.amount}}</p>
+                </view>
+                <view class="box_cp_right">
+                    <view>￥<span>{{items.get_goods_info.price}}</span></view>
+                </view>
+            </view>
+            <view class="box_bottom">
+                <view>{{item.audit_state == 1?'待审核':item.audit_state == 2?'团长确认':item.audit_state == 3?'团长驳回':'后台放款'}}
+                </view>
+                <p>总计：<span>￥<i>{{item.get_order_info.order_money}}</i></span></p>
+            </view>
+        </view>
+    </view>
+</view>
+<view style="{{orderList.length>0?'display:block':'display:none'}}">
+    <view class="bottom_footer" style="{{bottomStyle}}">已经到底啦~</view>
+  </view>

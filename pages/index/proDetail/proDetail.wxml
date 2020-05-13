@@ -2,23 +2,27 @@
 <view class="topline"></view>
 <view class="banner">
     <swiper bindchange="swiperChange" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="key">
+        <block>
+            <swiper-item>
+             <image class="banner" src="{{imgUrl + detail.img}}"></image>
+            </swiper-item>
+          </block>
+        <block wx:for="{{detail.img_list}}" wx:key="key">
           <swiper-item>
-           <image class="banner" src="{{item}}"></image>
+           <image class="banner" src="{{imgUrl + item}}"></image>
           </swiper-item>
-        
         </block>
       </swiper>
       
-  <view class="imageCount">{{current+1}}/{{background.length}}</view>
+  <view class="imageCount">{{current+1}}/{{detail.img_list.length + 1}}</view>
 </view>
 <view class="cp_title">
     <view class="cp_title_left">
         <view class="cp_title_left_top">
-            <view>￥<span>3.99</span></view>
-            <p>￥5.99</p>
+            <view>￥<span>{{detail.price}}</span></view>
+            <p>￥{{detail.market_price}}</p>
         </view>
-        <view class="cp_title_left_bottom">剩余1133份丨已团77份</view>
+        <view class="cp_title_left_bottom">剩余{{detail.stock}}份丨已团{{detail.sales}}份</view>
     </view>
     <view class="cp_title_right">
         <view class="cp_title_right_title">距结束还剩</view>
@@ -27,12 +31,12 @@
 </view>
 <view class="container">
     <view class="cp_ms">
-        <view class="cp_ms_tlte">海南千禧圣女果 小番茄 小西红柿 1kg 
-            <p><image src="../../../image/fenxiang.png"></image>分享</p>
+        <view class="cp_ms_tlte">{{detail.name}}
+            <button open-type="share" style="background: none;"><image src="../../../image/fenxiang.png"></image>分享</button>
         </view>
-        <p>新鲜美味，富含多种维生素C</p>
-        <span style="margin-right: 20rpx;">配送:次日达</span>
-        <span>规格:1盒</span>
+        <p>{{detail.account}}</p>
+        <span style="margin-right: 20rpx;">配送:{{detail.service_date==1?'次日送达':detail.service_date==2?'隔日送达':'快递送达'}}</span>
+        <span>规格:{{detail.specifications}}</span>
     </view>
 </view>
 <view class="jiange"></view>
@@ -42,21 +46,21 @@
         <view>商品详情</view>
     </view>
     <view class="content">
-        <image src="../../../image/imgcontent.png"></image>
+        <rich-text nodes="{{content}}"></rich-text>
     </view>
 </view>
 <view class="bottom">
     <view class="bottom_icon">
-        <view class="bottom_group">
+        <view class="bottom_group" bindtap="goIndex">
             <image src="../../../image/n1.png"></image>
             <view>首页</view>
         </view>
-        <view class="bottom_group">
-            <p>1</p>
+        <view class="bottom_group" bindtap='goCart'>
+            <p wx:if="{{num >0}}">{{num}}</p>
             <image src="../../../image/n3.png"></image>
             <view>购物车</view>
         </view>
     </view>
-    <view class="gouwuche">加入购物车</view>
-    <view class="goumai">立即购买</view>
+    <view class="gouwuche" bindtap="addCart">加入购物车</view>
+    <view class="goumai" bindtap="goPay">立即购买</view>
 </view>

@@ -63,12 +63,12 @@ page{
 }
 .list_bottom_text{
     float: left;
-    width: 62%;
+    width: 60%;
     margin-left: 20rpx;
 }
 .list_bottom_text>view{
     font-size: 30rpx;
-    margin-bottom: 2rpx;
+    margin-bottom: 10rpx;
 }
 .list_bottom_text>p{
     font-size: 28rpx;
@@ -87,10 +87,10 @@ page{
 }
 .list_right{
     float: right;
-    width: 18%;
+    width: 20%;
 }
 .list_right>view{
-    font-size:40rpx;
+    font-size:36rpx;
     font-weight: bold;
     color: #e94638;
     text-align: center;
@@ -101,3 +101,51 @@ page{
     color: #e94638;
     display: block;
 }
+.nav_tab {
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+}
+
+.show {
+    line-height: 80rpx;
+    text-align: center;
+    flex: 1;
+    color: #333333;
+    font-size: 30rpx;
+}
+
+.hidden {
+    line-height: 80rpx;
+    text-align: center;
+    color: #e94638;
+    flex: 1;
+    font-size: 30rpx;
+    border-bottom: 2px solid #e94638;
+}
+
+.zanwu{
+    margin: 50rpx 0;
+  }
+  .zanwu image{
+    width: 305rpx;
+    height:331rpx;
+    display: block;
+    margin: 0 auto;
+    margin-top: 300rpx;
+  }
+  .zanwu text{
+    text-align: center;
+    margin-top: 30rpx;
+    display: block;
+    font-size: 28rpx;
+    color: #a6a6a9;
+  }
+  .red{
+      color: #e94638!important;
+  }
+  .gray{
+      color: #666666!important;
+  }

@@ -1,0 +1,42 @@
+<!--pages/index/list/list.wxml-->
+<view class="topline"></view>
+<view class="classify">
+ 
+    <!--分类导航栏-->
+    <scroll-view class='left-navbar' scroll-y="true">
+      <view wx:for="{{screenArray}}" class="{{ currentTab == index ? 'active' : '' }}" wx:key="unique" data-id="{{item.id}}" bindtap="{{ currentTab != index ? 'navbarTap':'' }}" data-index="{{index}}" data-screenId="{{item.screenId}}">{{item.name}}
+      </view>
+    </scroll-view>
+    <scroll-view id="right" scroll-y="true" scroll-top="{{scrollTop}}">
+          <view class="index_cp" wx:for="{{list}}" wx:key="key" style="{{list.length>0?'display:block':'display:none'}}">
+            <image src="{{imgUrl + item.img}}" bindtap="goCp" data-id="{{item.id}}"></image>
+            <view class="index_cp_right">
+              <view class="index_cp_right_title" bindtap="goCp" data-id="{{item.id}}">{{item.name}}</view>
+              <!-- <p bindtap="goCp" data-id="{{item.id}}">{{item.account}}</p> -->
+              <view class="index_cp_right_bq" bindtap="goCp" data-id="{{item.id}}">{{item.service_date == 1?'次日送达':item.service_date == 2?'隔日送达':'快递送达'}}</view>
+              <view class="index_cp_fenshu" bindtap="goCp" data-id="{{item.id}}">已售出：{{item.sales}}份 剩余：<span>{{item.stock}}</span>份</view>
+              <view class="index_cp_jiage" >
+                <p>团购价:<span>￥{{item.price}}</span></p>
+                <view>
+                  <!-- 加减 -->
+                  <view class="stepper">
+                    <text class="{{minusStatus}} jia jia2" data-index="{{index}}" bindtap="bindMinus" data-id="{{item.id}}" data-num="{{item.num}}" wx:if="{{item.num != 0}}">-</text>
+                    <view wx:if="{{item.num != 0}}">{{item.num}}</view>
+                    <text class="normal jia jia1" data-index="{{index}}" data-id="{{item.id}}" bindtap="bindPlus">+</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view style="{{list.length>0?'display:block':'display:none'}}">
+            <view class="bottom_footer" style="{{bottomStyle}}">已经到底啦~</view>
+          </view>
+          <view class="zanwu" style="{{list.length>0?'display:none':'display:block'}}">
+            <image src="../../../image/zanwu.png"></image>
+            <text>暂无商品信息</text>
+          </view>
+
+    </scroll-view>
+   
+  </view>
+  <fid-btn p='{{p}}' bind:myevent="onMyEvent" id="list"></fid-btn>

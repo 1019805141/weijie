@@ -1,13 +1,15 @@
 /* pages/index/proDetail/proDetail.wxss */
-.banner{
+.banner {
     width: 750rpx;
-    height: 420rpx;
+    height: 750rpx;
     position: relative;
 }
-swiper{
-    height: 420rpx;
+
+swiper {
+    height: 750rpx;
 }
-.imageCount{
+
+.imageCount {
     position: absolute;
     right: 30rpx;
     bottom: 20rpx;
@@ -17,52 +19,62 @@ swiper{
     border-radius: 100rpx;
     font-size: 28rpx;
 }
-.cp_title{
+
+.cp_title {
     overflow: hidden;
 }
-.cp_title_left{
+
+.cp_title_left {
     background: #e94638;
     width: 70%;
     height: 130rpx;
     float: left;
 }
-.cp_title_left_top{
+
+.cp_title_left_top {
     margin-left: 30rpx;
     margin-top: 10rpx;
 }
-.cp_title_left_top>view{
+
+.cp_title_left_top>view {
     color: #ffffff;
     display: inline-block;
     font-size: 28rpx;
     margin-right: 20rpx;
 }
-.cp_title_left_top>view>span{
+
+.cp_title_left_top>view>span {
     font-size: 44rpx;
     font-weight: bold;
 }
-.cp_title_left_top>p{
+
+.cp_title_left_top>p {
     color: #ffffff;
     font-size: 26rpx;
     display: inline-block;
-    text-decoration:line-through
+    text-decoration: line-through
 }
-.cp_title_left_bottom{
+
+.cp_title_left_bottom {
     font-size: 28rpx;
     color: #ffffff;
     margin-left: 30rpx;
     margin-top: 6rpx;
 }
-.cp_title_right{
+
+.cp_title_right {
     float: left;
     background: #ffddda;
     width: 30%;
     height: 130rpx;
 }
-.cp_title_right_title{
+
+.cp_title_right_title {
     text-align: center;
     font-size: 28rpx;
     margin-top: 20rpx;
 }
+
 .name_right {
     width: 500rpx;
     font-size: 24rpx;
@@ -71,148 +83,174 @@ swiper{
     margin-top: 10rpx;
     margin-bottom: 10rpx;
     padding-left: 20rpx;
-  }
-  
-  .name_right text {
+}
+
+.name_right text {
     background: #e94638;
     border-radius: 6rpx;
     color: #fff;
     padding: 2rpx 6rpx;
     margin: 0 8rpx;
-  
-  }
-  .name_right>p{
+
+}
+
+.name_right>p {
     color: #333333;
     font-size: 28rpx;
-  }
-  
-  .p2 {
+}
+
+.p2 {
     padding: 30rpx 0;
-  }
-  
-  .p2>p {
+}
+
+.p2>p {
     margin-bottom: 20rpx;
     color: #666666;
     font-size: 30rpx;
     display: block;
-  }
-  
-  .p2>p>span {
+}
+
+.p2>p>span {
     float: right;
     color: #222222;
-  }
-  .cp_ms_tlte{
-      font-size: 32rpx;
-      color: #333333;
-      font-weight: bold;
-  }
-  .cp_ms_tlte>p{
-      float: right;
-      color: #e94638;
-      font-weight: normal;
-  }
-  .cp_ms_tlte>p>image{
-      width: 38rpx;
-      height: 38rpx;
-      margin-right: 4rpx;
-      margin-top: 2rpx;
-  }
-  .cp_ms_tlte{
-      margin-top: 20rpx;
-  }
-  .cp_ms>p{
-      color: #777777;
-      font-size: 28rpx;
-      display: block;
-      margin-top: 10rpx;
-      margin-bottom: 10rpx;
-  }
-  
-  .cp_ms>span{
-      color: #a7a7a7;
-      font-size: 26rpx;
-      display: inline-block;
-      margin-bottom: 20rpx;
-  }
+}
 
-  .title{
+.cp_ms_tlte {
+    font-size: 32rpx;
+    color: #333333;
+    font-weight: bold;
+}
+
+.cp_ms_tlte>p {
+    float: right;
+    color: #e94638;
+    font-weight: normal;
+}
+
+.cp_ms_tlte {
+    margin-top: 20rpx;
+}
+
+.cp_ms_tlte>button {
+    color: #e94638;
+    font-weight: normal;
+    float: right;
+    width: 120rpx !important;
+    padding: 0 !important;
+    font-size: 28rpx;
+}
+
+.cp_ms_tlte>button image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 4rpx;
+    margin-top: 2rpx;
+}
+
+.cp_ms>p {
+    color: #777777;
+    font-size: 28rpx;
+    display: block;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.cp_ms>span {
+    color: #a7a7a7;
+    font-size: 26rpx;
+    display: inline-block;
+    margin-bottom: 20rpx;
+}
+
+.title {
     margin: 30rpx 0;
-  }
-  .title>i{
-      background: #e94638;
-      border-bottom-right-radius:50px;
-      border-bottom-left-radius:50px;
-      border-top-right-radius:50px;
-      border-top-left-radius:50px;
-      width: 12rpx;
-      height: 34rpx;
-      display: block;
-      float: left;
-      margin-top: 6rpx;
-      margin-right: 10rpx;
-  }
-  .title>view{
-      font-size: 32rpx;
-  }
-  .content{
-      padding: 30rpx 0;
-      padding-bottom: 120rpx;
-  }
-  .content image{
-      width: 690rpx;
-      height: 794rpx;
-  }
-  .bottom{
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      border-top: 1px solid #f2f2f2;
-      height: 100rpx;
-      background: #ffffff;
-  }
-  .bottom_icon{
-      float: left;
-      width: 40%;
-  }
-  .bottom_group{
-      float: left;
-      width: 50%;
-      text-align: center;
-      position: relative;
-      margin-top: 12rpx;
-  }
-  .bottom_group>image{
-      width: 40rpx;
-      height: 40rpx;
-      margin: 0 auto;
-  }
-  .bottom_group>view{
+}
+
+.title>i {
+    background: #e94638;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    width: 12rpx;
+    height: 34rpx;
+    display: block;
+    float: left;
+    margin-top: 6rpx;
+    margin-right: 10rpx;
+}
+
+.title>view {
+    font-size: 32rpx;
+}
+
+.content {
+    padding: 30rpx 0;
+    padding-bottom: 120rpx;
+}
+
+.content image {
+    width: 100%;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #f2f2f2;
+    height: 100rpx;
+    background: #ffffff;
+}
+
+.bottom_icon {
+    float: left;
+    width: 40%;
+}
+
+.bottom_group {
+    float: left;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    margin-top: 12rpx;
+}
+
+.bottom_group>image {
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0 auto;
+}
+
+.bottom_group>view {
     font-size: 22rpx;
     color: #666666;
-  }
-  .bottom_group>p{
-      background: #e94638;
-      text-align: center;
-      color: #ffffff;
-      border-radius: 50%;
-      font-size: 22rpx;
-      width: 28rpx;
-      height: 28rpx;
-      position: absolute;
-      right: 20%;
-      top: -10rpx;
-  }
-  .gouwuche{
-      float: left;
-      width: 30%;
-      background: #fcb758;
-      color: #ffffff;
-      font-size: 32rpx;
-      line-height: 100rpx;
-      text-align: center;
-  }
-  .goumai{
+}
+
+.bottom_group>p {
+    background: #e94638;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 22rpx;
+    width: 28rpx;
+    height: 28rpx;
+    position: absolute;
+    right: 20%;
+    top: -10rpx;
+}
+
+.gouwuche {
+    float: left;
+    width: 30%;
+    background: #fcb758;
+    color: #ffffff;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    text-align: center;
+}
+
+.goumai {
     float: left;
     width: 30%;
     background: #e94638;
@@ -220,4 +258,8 @@ swiper{
     font-size: 32rpx;
     line-height: 100rpx;
     text-align: center;
-  }
+}
+
+rich-text {
+    font-size: 28rpx;
+}

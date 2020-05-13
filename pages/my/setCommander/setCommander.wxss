@@ -31,6 +31,7 @@
     height: 98rpx;
     float: left;
     margin-right: 20rpx;
+    border-radius: 50%;
 }
 .list_text>view{
     font-size: 30rpx;
@@ -66,3 +67,20 @@
     padding: 6rpx 26rpx;
     margin-top: 20rpx;
 }
+.zanwu{
+    margin: 50rpx 0;
+  }
+  .zanwu image{
+    width: 305rpx;
+    height:331rpx;
+    display: block;
+    margin: 0 auto;
+    margin-top: 300rpx;
+  }
+  .zanwu text{
+    text-align: center;
+    margin-top: 30rpx;
+    display: block;
+    font-size: 28rpx;
+    color: #a6a6a9;
+  }

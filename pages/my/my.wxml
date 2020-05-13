@@ -1,59 +1,92 @@
 <!--pages/my/my.wxml-->
 <view class="top">
     <view class="my">
-        <view class="my_left">
-            <image src='../../image/mytx.png'></image>
-            <view>小张</view>
-            <p>普通用户</p>
+
+        <view wx:if="{{token}}">
+            <view class="my_left" wx:if="{{type ==1}}">
+                <image src='{{user.wechat_avatar}}'></image>
+                <view>{{user.wechat_name}}</view>
+                <p>普通用户</p>
+            </view>
+            <view class="my_left" wx:if="{{type ==2}}">
+                <image src='{{user.get_user_info.wechat_avatar}}'></image>
+                <view>{{user.get_user_info.wechat_name}}</view>
+                <p>团长</p>
+            </view>
+        </view>
+        <view wx:else>
+            <view class="my_left">
+                <image src='../../image/tx_logo.png'></image>
+                <view bindtap="goLogin">请登录</view>
+            </view>
         </view>
         <view class="my_right">
             <image src="../../image/xiaoxi.png"></image>
             消息
         </view>
-
     </view>
     <image src="../../image/mybg.png"></image>
 </view>
+
+
 <view class="container">
     <view class="order">
-        <view class="order_title">我的订单<p>全部订单></p></view>
-        <view class="order_icon">
+        <view class="order_title">我的订单<p bindtap="goOrder" data-type="all" data-selected="0">全部订单></p></view>
+        <view class="order_icon" bindtap="goOrder" data-type="0" data-selected="1">
             <image src="../../image/my_icon1.png"></image>
             <view>待付款</view>
         </view>
-        <view class="order_icon">
+        <view class="order_icon" bindtap="goOrder" data-type="1" data-selected="2">
             <image src="../../image/my_icon2.png"></image>
             <view>待提货</view>
         </view>
-        <view class="order_icon">
+        <view class="order_icon" bindtap="goOrder" data-type="2" data-selected="3">
             <image src="../../image/my_icon3.png"></image>
             <view>已完成</view>
         </view>
-        <view class="order_icon">
+        <view class="order_icon" bindtap="goOrder" data-type="3" data-selected="4">
             <image src="../../image/my_icon4.png"></image>
             <view>已取消</view>
         </view>
     </view>
+    <view class="index_banner">
+        <swiper autoplay="{{autoplay}}" interval="{{interval}}" bindchange="bindchange" style="height:{{imgheights[current]}}rpx;" duration="{{duration}}">
+          <block wx:for="{{imgList}}" wx:key="key">
+            <swiper-item>
+              <image class="banner" src="{{imgUrl + item.img}}"  data-id='{{index}}' bindload="imageLoad" mode="widthFix"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
     <view class="list">
-        <view class="list_box">
+        <view class="list_box" data-type="{{type}}" bindtap="goTuan">
             <image src="../../image/mylist4.png"></image>
-            <view>申请团长</view>
+            <view>{{type== 1?'申请团长':'团长工作台'}}</view>
             <image src="../../image/jiantou.png"></image>
         </view>
-        <view class="list_box">
+        <view class="list_box" bindtap="goSettuan">
             <image src="../../image/mylist5.png"></image>
             <view>设置默认团长</view>
             <image src="../../image/jiantou.png"></image>
         </view>
-        <view class="list_box">
+        <view class="list_box" bindtap="getPhone">
+            <image src="../../image/mylist9.png"></image>
+            <view>设置常用取货人信息</view>
+            <image src="../../image/jiantou.png"></image>
+        </view>
+        <view class="list_box" bindtap="goNotice">
             <image src="../../image/mylist6.png"></image>
             <view>关于薇姐爱团GO</view>
             <image src="../../image/jiantou.png"></image>
         </view>
     </view>
-    <view class="erweima">
+    <view class="erweima" wx:if="{{type == 1}}">
         <view>向团长出示二维码取货</view>
-        <image src="../../image/erweima.png"></image>
+        <image src="{{user.qrcode_url}}"></image>
+    </view>
+    <view class="erweima" wx:if="{{type == 2}}">
+        <view>向团长出示二维码取货</view>
+        <image src="{{user.get_user_info.qrcode_url}}"></image>
     </view>
 </view>
 

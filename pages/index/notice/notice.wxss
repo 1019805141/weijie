@@ -15,3 +15,7 @@
     line-height: 50rpx;
     font-size: #444444;
 }
+rich-text{
+    font-size: 28rpx;
+    line-height: 50rpx;
+}

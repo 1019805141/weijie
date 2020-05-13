@@ -63,13 +63,17 @@ page{
     bottom: 0;
     width: 100%;
 }
-.top_bottom view:first-child{
+.top_bottom view{
     float: left;
-    font-size: 28rpx;
+    width: 33%;
+    font-size: 24rpx;
+}
+.top_bottom view:nth-child(2){
+    text-align: center;
 }
 .top_bottom view:last-child{
     float: right;
-    font-size: 28rpx;
+    text-align: right;
 }
 .box{
     background: #ffffff;
@@ -101,10 +105,11 @@ page{
   }
   .list_left{
       float: left;
+      width: 76%;
   }
   .list_left>view{
       color: #333333;
-      font-size: 28rpx;
+      font-size: 26rpx;
   }
   .list_left>p{
     font-size: 26rpx;
@@ -127,4 +132,20 @@ page{
   .list:last-child{
       border-bottom: none;
       margin-bottom: 0;
+  }
+  .zanwu{
+    margin: 50rpx 0;
+  }
+  .zanwu image{
+    width: 305rpx;
+    height:331rpx;
+    display: block;
+    margin: 0 auto;
+  }
+  .zanwu text{
+    text-align: center;
+    margin-top: 30rpx;
+    display: block;
+    font-size: 28rpx;
+    color: #a6a6a9;
   }

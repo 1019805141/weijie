@@ -1,0 +1,19 @@
+/* components/daychoose/daychoose.wxss */
+.month-view{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20rpx 30rpx;
+    font-size: 32rpx;
+  }
+   
+  /* .active{
+    color: #e94638;
+  } */
+   
+  /* .disable{
+    color: #e4e4e4;
+  } */
+  .fontSize{
+      font-size: 28rpx;
+  }

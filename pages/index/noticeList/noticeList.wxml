@@ -1,0 +1,11 @@
+<!--pages/index/noticeList/noticeList.wxml-->
+<view class="topline"></view>
+<view class="container">
+    <view class="list" wx:for='{{noticeList}}' wx:key="key" data-id="{{item.id}}" bindtap="goDetail">
+        <image src="{{imgUrl + item.img}}"></image>
+        <view class="list_text">
+            <view>{{item.title}}</view>
+            <p>{{item.updated_at}}</p>
+        </view>
+    </view>
+</view>

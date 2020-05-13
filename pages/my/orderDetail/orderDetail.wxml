@@ -1,9 +1,45 @@
 <!--pages/my/orderDetail/orderDetail.wxml-->
 <view class="top">
-    <view class="top_text">
+    <view class="top_text" wx:if="{{type == 0}}">
         <view class="container">
             <view>待支付</view>
-            <span>订单超过30分钟自动取消，请在20分18内完成交易</span>
+            <span>订单超过30分钟自动取消，请在30分钟内完成支付</span>
+        </view>
+    </view>
+    <view class="top_text" wx:if="{{type == 1}}">
+        <view class="container">
+            <view>待提货</view>
+            <span>请向团长出示您的提货码进行提货</span>
+        </view>
+    </view>
+    <view class="top_text" wx:if="{{type == 2}}">
+        <view class="container">
+            <view>已完成</view>
+            <span>欢迎您再次购买！祝您生活愉快！</span>
+        </view>
+    </view>
+    <view class="top_text" wx:if="{{type == 3}}">
+        <view class="container">
+            <view>已取消</view>
+            <span>您的订单已取消</span>
+        </view>
+    </view>
+    <view class="top_text" wx:if="{{type == 4}}">
+        <view class="container">
+            <view>退款中</view>
+            <span>您的退款信息已发送至团长请耐心等待</span>
+        </view>
+    </view>
+    <view class="top_text" wx:if="{{type == 5}}">
+        <view class="container">
+            <view>退款被驳回</view>
+            <span>您的退款信息已被团长驳回</span>
+        </view>
+    </view>
+    <view class="top_text" wx:if="{{type == 6}}">
+        <view class="container">
+            <view>已退款</view>
+            <span>您的退款已处理</span>
         </view>
     </view>
     <image src="../../../image/orderBg.png"></image>
@@ -11,53 +47,104 @@
 <view class="container">
     <view class="box">
         <view class="box_top">
-            <view>社区团长小张</view>
-            <span>自提点：报业文苑南门A区-南区</span>
+            <view>{{orderDetail.get_teamer.name}}</view>
+            <span>自提点：{{orderDetail.get_teamer.address}}</span>
         </view>
-        <view class="cp_list">
-            <image src="../../../image/cplist.png"></image>
+        <view class="cp_list" wx:for="{{orderDetail.goods_list}}" wx:key="key">
+            <image src="{{imgUrl + item.get_goods_info.img}}"></image>
             <view class="cp_text">
-                <view>海南千禧圣女果 小番茄</view>
-                <view style="float: left; margin-top: 20rpx;"><p>￥<span>9.99</span></p><div>￥9.99</div></view>
-                <p>X1</p>
-            </view>
-        </view>
-        <view class="cp_list">
-            <image src="../../../image/cplist.png"></image>
-            <view class="cp_text">
-                <view>海南千禧圣女果 小番茄</view>
-                <view style="float: left; margin-top: 20rpx;"><p>￥<span>9.99</span></p><div>￥9.99</div></view>
-                <p>X1</p>
+                <view>{{item.get_goods_info.name}}</view>
+                <view style="float: left; margin-top: 20rpx;">
+                    <p>￥<span>{{item.get_goods_info.price}}</span></p>
+                    <div>￥{{item.get_goods_info.market_price}}</div>
+                </view>
+                <p>X{{item.amount}}</p>
             </view>
         </view>
         <view class="cp_jiage">
             <p>商品金额</p>
-            <view>￥<span>9.99</span></view>
+            <view>￥<span>{{orderDetail.order_money}}</span></view>
         </view>
     </view>
 </view>
 <view class="container">
-<view class="bg">
+    <view class="bg">
         <view class="ms">
             <view>实付款</view>
-            <p>￥9.99</p>
+            <p>￥{{orderDetail.order_money}}</p>
         </view>
         <view class="ms">
             <view>订单编号</view>
-            <p>13123132123132</p>
+            <p>{{orderDetail.order_number}}</p>
         </view>
         <view class="ms">
             <view>下单时间</view>
-            <p>2020-01-14 10:10:26</p>
+            <p>{{orderDetail.created_at}}</p>
         </view>
     </view>
 </view>
-<view class="erweima">
+
+<view class="tuikuan" wx:if="{{type ==2 || type == 1}}" bindtap="goafterOrder">申请退款</view>
+
+
+<view class="erweima" wx:if="{{type ==1}}">
     <view>向团长出示二维码取货</view>
-    <image src="../../../image/erweima.png"></image>
+    <image src="{{erweima}}"></image>
 </view>
 
-<view class="bottom">
-    <view class="goumai">立即购买</view>
-    <view class="gouwuche">加入购物车</view>
+<view class="bottom" wx:if="{{type == 0}}">
+    <view class="goumai" bindtap="">立即购买</view>
+    <view class="gouwuche" data-id="{{orderDetail.id}}" bindtap="deleteOrder">取消订单</view>
+</view>
+
+
+<view class="motal" style="{{motalStyle}}">
+    <view class="motal_box">
+        <view class="motal_title">
+            申请退款
+            <view class="hide" bindtap="hide">X</view>
+        </view>
+        <view class="xuanze">
+            <radio-group class="radio-group" bindchange="radioChange">
+                <radio class="radio" wx:for-items="{{list}}" wx:key="name" value="{{item.id}}"
+                    checked="{{item.checked}}">
+                    <text>{{item.name}}</text>
+                </radio>
+            </radio-group>
+        </view>
+
+        <view class="container">
+            <checkbox-group bindchange="checkboxChange" >
+                <view wx:for="{{orderDetail.goods_list}}" wx:key="key">
+                    <checkbox value="{{item.id}}"  class="motai_left" style="{{checkStyle}}" checked="{{item.checked}}" />
+                    <view class="cp_list motai_list">
+                        <image src="{{imgUrl + item.get_goods_info.img}}"></image>
+                        <view class="cp_text motal_text">
+                            <view>{{item.get_goods_info.name}}</view>
+                            <view style="float: left; margin-top: 20rpx;">
+                                <p>￥<span>{{item.get_goods_info.price}}</span></p>
+                                <div>￥{{item.get_goods_info.market_price}}</div>
+                            </view>
+                            <p>X{{item.amount}}</p>
+                        </view>
+                    </view>
+                </view>
+                </checkbox-group>
+        </view>
+
+
+        <view class="tui">退款原因</view>
+        <textarea bindinput="forMessage" placeholder="在此输入退款原因" placeholder-style="color:#999999" name="" id="" cols="30" rows="10"></textarea>
+
+        <view class="tui_btn" bindtap="subAfter">提交退款</view>
+    </view>
+</view>
+
+<view class="motal" style="{{tuisong}}">
+    <view class="motal_box2">
+        <view class="tuisong_tltle">提交成功</view>
+        <view class="tuisong_text">是否开启消息推送通知</view>
+        <view class="tuisong_btn1" bindtap="tuisong_t">确定</view>
+        <view class="tuisong_btn2" bindtap="tuisong_hide">取消</view>
+    </view>
 </view>

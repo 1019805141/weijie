@@ -1,35 +1,172 @@
 // pages/my/acceptance/acceptance.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list:[{
-      name:'榴莲',
-      num:5
-    },{
-      name:'榴莲',
-      num:5
-    },
-    {
-      name:'榴莲',
-      num:5
-    }],
+    list: [{
+        name: '榴莲',
+        num: 5
+      }, {
+        name: '榴莲',
+        num: 5
+      },
+      {
+        name: '榴莲',
+        num: 5
+      }
+    ],
     controls: true,
     showModalStatus: false,
+    list: null,
+    queList: [],
+    goods: [],
+    message:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.loadList()
   },
+  loadList: function () {
+    var that = this
+    wx.showLoading({ //显示 loading 提示框
+      title: "加载中..."
+    })
+    app.http('api/teamer/sale', {
+        token: wx.getStorageSync('token')
+      }, "GET")
+      .then(res => {
+        console.log(res, '3213232131-----')
+        // token失效
+        if (res.status_code == 401) {
+          wx.showToast({
+            title: '登录超时，重新登录中..',
+            duration: 2000,
+            icon: 'none',
+            success(data) {
+              setTimeout(function () {
+                wx.navigateTo({
+                  url: '../../login/login'
+                })
+              }, 1000) //延迟时间
+            }
+          })
+        } else {
+          that.setData({
+            list: res.data.saleList
+          })
+          wx.hideLoading()
+        }
+      })
+  },
+  checkboxChange: function (e) {
+    console.log(e)
+    var queList = []
+    var list = this.data.list
+    var index = e.detail.value
+    index.map(function (n) {
+      queList.push(list[n])
+    })
+    console.log(queList)
+    this.setData({
+      queList: queList
+    })
+  },
+
   powerDrawer: function (e) {
     var currentStatu = e.currentTarget.dataset.statu;
-    this.util(currentStatu)
+    var that = this
+    if (that.data.queList.length > 0) {
+      this.util(currentStatu)
+    } else {
+      wx.showToast({
+        title: '请先选择商品',
+        duration: 2000,
+        icon: 'none'
+      })
+    }
+
   },
+  changeinput: function (e) {
+    console.log(e)
+    var index = e.currentTarget.dataset.index
+    var queList = this.data.queList
+    var value = e.detail.value
+    queList[index].amount = value
+    this.setData({
+      goods:queList
+    })
+  },
+    formessage:function(e){
+      this.setData({
+        message:e.detail.value
+      })
+  },
+  submit:function(e){
+    var currentStatu = e.currentTarget.dataset.statu;
+    var that= this
+    var goods = that.data.goods
+    var queList = that.data.queList
+
+    if(goods.length==0){
+      wx.showToast({
+        title: '请输入缺货数量',
+        duration: 2000,
+        icon: 'none'
+      })
+      
+    }else{
+      wx.showLoading({ //显示 loading 提示框
+        title: "加载中..."
+      })
+      app.http('api/teamer/outSale', {
+        token: wx.getStorageSync('token'),
+        goods: JSON.stringify(goods),
+        message:that.data.message
+      }, "POST").then(res => {
+  
+        if (res.status_code == 401) {
+          wx.showToast({
+            title: '登录超时，重新登录中..',
+            duration: 2000,
+            icon: 'none',
+            success(data) {
+              setTimeout(function () {
+                wx.navigateTo({
+                  url: '../../login/login'
+                })
+              }, 1000) //延迟时间
+            }
+          })
+        } else {
+          wx.showToast({
+            title: '提交成功..',
+            duration: 2000,
+            icon: 'none',
+            success(data) {
+              setTimeout(function () {
+                wx.navigateBack({
+                  delta: 1
+                })
+              }, 1000) //延迟时间
+            }
+          })
+        }
+        wx.hideLoading()
+      })
+    }
+
+    
+    
+
+
+  },
+
   util: function (currentStatu) {
     /* 动画部分 */
     // 第1步：创建动画实例  

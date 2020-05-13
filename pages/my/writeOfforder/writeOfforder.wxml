@@ -1,0 +1,57 @@
+<!--pages/my/writeOfforder/writeOfforder.wxml-->
+
+<!--pages/my/orderDetail/orderDetail.wxml-->
+<view class="top">
+    <view class="top_text">
+        <view class="container">
+            <view>待核销</view>
+            <span>请选择下方要核销的商品</span>
+        </view>
+    </view>
+    <image src="../../../image/orderBg.png"></image>
+</view>
+<view class="container">
+    <view class="box">
+        <view class="box_box">
+            <checkbox-group bindchange="checkboxChangeAll" class="checkBox">
+                <checkbox class="weui-check check_left" bindchange="checkbox1" value="all" checked="{{checked}}" />
+            </checkbox-group>
+            <checkbox-group bindchange="checkboxChangeList">
+                <view class="cp_list" wx:for="{{detail.goods_list}}" wx:key="key">
+                    <image src="{{imgUrl + item.get_goods_info.img}}"></image>
+                    <view class="cp_text">
+                        <view>{{item.get_goods_info.name}}</view>
+                        <p>X{{item.amount}}</p>
+                    </view>
+                    <checkbox class="weui-check check_left_list" value="{{item.id}}" checked="{{item.checked}}" />
+                </view>
+            </checkbox-group>
+        </view>
+
+    </view>
+</view>
+<view class="container">
+    <view class="bg">
+        <view class="ms">
+            <view>实付款</view>
+            <p>￥{{detail.order_money}}</p>
+        </view>
+        <view class="ms">
+            <view>订单编号</view>
+            <p>{{detail.order_number}}</p>
+        </view>
+        <view class="ms">
+            <view>用户名</view>
+            <p>{{detail.receiver_name}}</p>
+        </view>
+        <view class="ms">
+            <view>手机号</view>
+            <p>{{detail.receiver_phone}}</p>
+        </view>
+    </view>
+</view>
+
+<view class="bottom">
+    <view class="goumai" bindtap="goWrite">核销商品</view>
+    <view class="gouwuche" data-id="{{orderDetail.id}}" bindtap="deleteOrder">取消订单</view>
+</view>

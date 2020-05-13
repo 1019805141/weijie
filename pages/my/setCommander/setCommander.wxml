@@ -6,55 +6,31 @@
         <view>默认团长</view>
     </view>
     <view class="list">
-        <image src="../../../image/mytx.png"></image>
+        <image src="{{teamer.get_teamer_info.get_user_info.wechat_avatar}}"></image>
         <view class="list_text">
-            <view>社区团长小张</view>
-            <p><image src="../../../image/dw.png"></image>距您0.25km</p>
-            <span>自提点:报业文苑南门A区-南门</span>
+            <view>{{teamer.get_teamer_info.name}}</view>
+            <p><image src="../../../image/dw.png"></image></p>
+            <span>自提点:{{teamer.get_teamer_info.address}}</span>
         </view>
-        <view class="list_right">选TA</view>
     </view>
 </view>
 <view class="jiange"></view>
+<view class="zanwu" style="{{teamList.length>0?'display:none':'display:block'}}">
+    <image src="../../../image/zanwu3.png" ></image>
+    <text>暂无团长信息</text>
+  </view>
 <view class="container">
     <view class="title">
         <i></i>
         <view>更多团长</view>
     </view>
-    <view class="list">
-        <image src="../../../image/mytx.png"></image>
+    <view class="list" wx:for="{{teamList}}" wx:key="key" style="{{teamList.length>0?'display:block':'display:none'}}">
+        <image src="{{item.get_user_info.wechat_avatar}}"></image>
         <view class="list_text">
-            <view>社区团长小张</view>
-            <p><image src="../../../image/dw.png"></image>距您0.25km</p>
-            <span>自提点:报业文苑南门A区-南门</span>
+            <view>{{item.name}}</view>
+            <p><image src="../../../image/dw.png"></image>距您{{item.location}}km</p>
+            <span>自提点:{{item.address}}</span>
         </view>
-        <view class="list_right">选TA</view>
-    </view>
-    <view class="list">
-        <image src="../../../image/mytx.png"></image>
-        <view class="list_text">
-            <view>社区团长小张</view>
-            <p><image src="../../../image/dw.png"></image>距您0.25km</p>
-            <span>自提点:报业文苑南门A区-南门</span>
-        </view>
-        <view class="list_right">选TA</view>
-    </view>
-    <view class="list">
-        <image src="../../../image/mytx.png"></image>
-        <view class="list_text">
-            <view>社区团长小张</view>
-            <p><image src="../../../image/dw.png"></image>距您0.25km</p>
-            <span>自提点:报业文苑南门A区-南门</span>
-        </view>
-        <view class="list_right">选TA</view>
-    </view>
-    <view class="list">
-        <image src="../../../image/mytx.png"></image>
-        <view class="list_text">
-            <view>社区团长小张</view>
-            <p><image src="../../../image/dw.png"></image>距您0.25km</p>
-            <span>自提点:报业文苑南门A区-南门</span>
-        </view>
-        <view class="list_right">选TA</view>
+        <view class="list_right" data-id="{{item.id}}" bindtap="team">选TA</view>
     </view>
 </view>

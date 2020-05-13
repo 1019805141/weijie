@@ -1,4 +1,4 @@
-<view style='height:200rpx;'></view>
+<view style='height:100rpx;'></view>
 <view class="bottom-bottom {{systemInfo?'db':''}}">
   <view bindtap='indexS' class='{{p==0?"ac":""}}'>
     <image src='{{p==0?"../../../image/s1.png":"../../../image/n1.png"}}'></image>
@@ -9,7 +9,7 @@
     <view>分类</view>
   </view>
   <view bindtap='yaoqingS' class='gou{{p==2?"ac":""}}'>
-    <text class="">1</text>
+  <text class="" wx:if="{{gou>0}}" style="{{p==2?'display:none':'display:block'}}">{{gou}}</text>
     <image src='{{p==2?"../../../image/s3.png":"../../../image/n3.png"}}'></image>
     <view>购物车</view>
   </view>

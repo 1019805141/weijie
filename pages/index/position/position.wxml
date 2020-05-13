@@ -1,0 +1,9 @@
+<!--pages/index/position/position.wxml-->
+<view class="topline"></view>
+<image src="../../../image/dw_page.png" class="dw"></image>
+<view class="title">我们需要知道您在哪里</view>
+<view class="text">才好为您推荐附近的团长方便您去取货~</view>
+<view class="button" bindtap="getLocation">获取位置</view>
+
+
+

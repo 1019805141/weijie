@@ -46,3 +46,19 @@ page{
 .list_p>p{
     float: right;
 }
+.zanwu{
+    margin: 50rpx 0;
+  }
+  .zanwu image{
+    width: 305rpx;
+    height:331rpx;
+    display: block;
+    margin: 0 auto;
+  }
+  .zanwu text{
+    text-align: center;
+    margin-top: 100rpx;
+    display: block;
+    font-size: 28rpx;
+    color: #a6a6a9;
+  }

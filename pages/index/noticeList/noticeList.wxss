@@ -1,0 +1,25 @@
+/* pages/index/noticeList/noticeList.wxss */
+.list{
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 20rpx;
+    overflow: hidden;
+    margin-top: 30rpx;
+}
+.list>image{
+    float: left;
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 30rpx;
+}
+.list_text{
+    float: left;
+    width: 80%;
+}
+.list_text>view{
+    font-size: 30rpx;
+    margin-bottom: 10rpx;
+}
+.list_text>p{
+    color: #808080;
+    font-size: 26rpx;
+}

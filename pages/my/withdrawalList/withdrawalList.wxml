@@ -1,17 +1,21 @@
 <!--pages/my/withdrawalList/withdrawalList.wxml-->
 <view class="topline"></view>
 <view class="container">
-    <view class="list">
-        <view class="list_text blue">
-            <view class="list_title">提现成功<p>￥400</p></view>
+    <view class="zanwu" style="{{list.length>0?'display:none':'display:block'}}">
+        <image src="../../../image/zanwu2.png"></image>
+        <text>暂无提现明细信息</text>
+    </view>
+    <view class="list" wx:for="{{list}}" wx:key="key" style="{{list.length>0?'display:block':'display:none'}}">
+        <view class="list_text {{item.status==2?'blue':'red'}}">
+            <view class="list_title">提现成功<p>￥{{item.money}}</p></view>
             <view class="list_r">账户:微信钱包<p>手续费:0.00</p></view>
-            <view class="list_p">发起时间：2020-03-02 13:00</view>
-            <view class="list_p">审核时间：2020-03-02 13:00</view>
+            <view class="list_p">发起时间：{{item.created_at}}</view>
+            <view class="list_p">审核时间：{{item.status==2?item.created_at:'--'}}</view>
             <view class="list_p">备注：无</view>
         </view>
-        <image src="../../../image/mbg1.png"></image>
+        <image src="{{item.status==2?'../../../image/mbg1.png':'../../../image/mbg2.png'}}"></image>
     </view>
-    <view class="list">
+    <!-- <view class="list">
         <view class="list_text red">
             <view class="list_title">审核中<p>￥400</p></view>
             <view class="list_r">账户:微信钱包<p>手续费:0.00</p></view>
@@ -20,6 +24,8 @@
             <view class="list_p">备注：无</view>
         </view>
         <image src="../../../image/mbg2.png"></image>
-    </view>
+    </view> -->
 </view>
-
+<view style="{{list.length>0?'display:block':'display:none'}}">
+    <view class="bottom_footer" style="{{bottomStyle}}">已经到底啦~</view>
+  </view>

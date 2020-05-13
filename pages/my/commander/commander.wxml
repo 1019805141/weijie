@@ -1,36 +1,61 @@
 <!--pages/my/commander/commander.wxml-->
 <view class="topline"></view>
-<view class="bg">
+<view class="bg" wx:if="{{type == 5}}">
     <view class="container">
         <view class="input">
             <view>姓名</view>
-            <input type="text" placeholder="您的姓名" placeholder-style="color:#888888" />
+            <input type="text" bindinput="forName" placeholder="您的姓名" placeholder-style="color:#888888" />
         </view>
         <view class="input">
             <view>手机号</view>
-            <input type="number" placeholder="您的手机号" placeholder-style="color:#888888" />
+            <input type="number" bindinput="forTel" placeholder="您的手机号" placeholder-style="color:#888888" />
         </view>
         <view class="input">
             <view>验证码</view>
-            <input type="text" placeholder="输入验证码" placeholder-style="color:#888888" />
-            <p>获取验证码</p>
+            <input type="text"  bindinput="forCode" placeholder="输入验证码" placeholder-style="color:#888888" />
+            <button bindtap="sendCode" disabled="{{smsFlag}}" style='color:{{sendColor}}'>{{sendTime}}</button>
         </view>
         <view class="input">
             <view>地区</view>
-            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-                <view class="picker">
-                    {{defult}}
-                </view>
-              </picker>
-              <image src="../../../image/jiantou.png"></image>
-        </view> 
+            <span bindtap="goMap">{{defult}}</span>
+            <image src="../../../image/jiantou.png" bindtap="goMap"></image>
+        </view>
         <view class="input">
             <view>详细地址</view>
-            <input type="text" placeholder="请输入详细地址" placeholder-style="color:#888888" />
+            <input type="text" bindinput="forAdress" placeholder="请输入详细地址" placeholder-style="color:#888888" />
         </view>
     </view>
 </view>
-
+<view class="bg" wx:else>
+    <view class="container">
+        <view class="input">
+            <view>姓名</view>
+            <span>{{teamList.name}}</span>
+        </view>
+        <view class="input">
+            <view>手机号</view>
+            <span>{{teamList.phone}}</span>
+        </view>
+        <view class="input">
+            <view>地区</view>
+            <span>{{teamList.located_name}}</span>
+        </view>
+        <view class="input">
+            <view>详细地址</view>
+            <span>{{teamList.address}}</span>
+        </view>
+    </view>
+</view>
 <view class="container">
-    <view class="btn">立即申请</view>
+    <view class="btn" bindtap='submit'>{{type==1?'请等待管理员审核通过':type==2?'审核通过请确认成为团长':'立即申请'}}</view>
+</view>
+
+
+<view class="motal" style="{{tuisong}}">
+    <view class="motal_box2">
+        <view class="tuisong_tltle">提交成功</view>
+        <view class="tuisong_text">是否开启消息推送通知</view>
+        <view class="tuisong_btn1" bindtap="tuisong_t">确定</view>
+        <view class="tuisong_btn2" bindtap="tuisong_hide">取消</view>
+    </view>
 </view>

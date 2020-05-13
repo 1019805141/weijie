@@ -1,3 +1,4 @@
+const app = getApp();
 Component({
   properties: {
     p: {
@@ -9,31 +10,85 @@ Component({
       type: String,
       value: 0,
       systemInfo: false,
+    },
+    gou:{
+      type:Number,
+      value:0,
+      systemInfo:false
     }
   },
   methods: {
     //跳转到个人中心
     geren: function () {
-      wx.navigateTo({
-        url: '../my/my'
-      })
+      console.log(this.properties.p)
+      if(this.properties.p == 3){  
+
+      }else{
+        wx.redirectTo({
+          url: '/pages/my/my'
+        })
+      }
     },
     //跳转到邀请
     yaoqingS: function () {
-      wx.navigateTo({
-        url: '../xiaoxi/yaoqing'
-      })
+      if(this.properties.p == 2){  
+
+      }else{
+        wx.redirectTo({
+          url: '/pages/index/payCar/payCar'
+        })
+      }
     },
     //
     tixianmingxiS:function(){
-      wx.navigateTo({
-        url:'../geren/tixianmingxi'
-      })
+      if(this.properties.p == 1){  
+
+      }else{
+        wx.redirectTo({
+          url:'/pages/index/list/list'
+        })
+      }
     },
     //首页
     indexS:function(){
-      wx.navigateTo({
-        url:'../index/index'
+      if(this.properties.p == 0){  
+
+      }else{
+        wx.redirectTo({
+          url:'/pages/index/index'
+        })
+      }
+    },
+    gouwuche:function(){
+      var gouwuche=this.data.gou
+      gouwuche++
+      this.setData({
+        gou:gouwuche
+      })
+    },
+    gouwuchejian:function(){
+      var gouwuche=this.data.gou
+      gouwuche--
+      this.setData({
+        gou:gouwuche
+      })
+    },
+    // 查询购物车数量
+    carNum:function(){
+      var that = this
+      app.http('api/car', {
+        token: wx.getStorageSync('token'),
+        pageSize:100
+      }, "GET").then(res => {
+        var data= res.data.carList.data
+        var num = 0
+        data.map(function(n){
+          num +=n.amount
+        })
+        this.setData({
+          gou:num
+        })
+        this.triggerEvent('myevent',{carlist:res.data.carList.data})
       })
     }
   },
@@ -53,5 +108,10 @@ Component({
         })
       }
     })
+  },
+  pageLifetimes:{
+    show:function(){
+      this.carNum()
+    }
   }
 })

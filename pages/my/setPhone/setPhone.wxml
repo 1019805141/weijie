@@ -1,0 +1,18 @@
+<!--pages/my/setPhone/setPhone.wxml-->
+<!--pages/my/commander/commander.wxml-->
+<view class="topline"></view>
+<view class="bg">
+    <view class="container">
+        <view class="input">
+            <view>姓名</view>
+            <input type="text" bindinput="forName" value="{{receiver_name}}" placeholder="您的姓名" placeholder-style="color:#888888" />
+        </view>
+        <view class="input">
+            <view>手机号</view>
+            <input type="number" bindinput="forTel" value="{{receiver_phone}}" placeholder="您的手机号" placeholder-style="color:#888888" />
+        </view>
+    </view>
+</view>
+<view class="container">
+    <view class="btn" bindtap='submit'>立即提交</view>
+</view>

@@ -1,0 +1,5 @@
+/* pages/my/about/about.wxss */
+rich-text{
+    font-size: 28rpx;
+    margin-top: 30rpx;
+}

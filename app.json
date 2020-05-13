@@ -1,6 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index/position/position",
+    "pages/index/order/order",
+    "pages/login/login",
+    "pages/my/aftermarketDetail/aftermarketDetail",
+    "pages/my/aftermarket/aftermarket",
+    "pages/index/payCar/payCar",
+    "pages/index/list/list",
     "pages/my/acceptance/acceptance",
     "pages/my/writeOrderlist/writeOrderlist",
     "pages/my/sqOrder/sqOrder",
@@ -14,23 +21,34 @@
     "pages/my/orderDetail/orderDetail",
     "pages/my/myOrder/myOrder",
     "pages/my/my",
-    "pages/index/order/order",
     "components/Dialog/Dialog",
     "pages/index/proDetail/proDetail",
     "pages/index/notice/notice",
     "pages/index/search/search",
     "pages/index/commander/commander",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/index/noticeList/noticeList",
+    "pages/index/bottom/bottom",
+    "pages/my/writeOfforder/writeOfforder",
+    "components/daychoose/daychoose",
+    "pages/my/about/about",
+    "pages/my/setPhone/setPhone"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "薇姐爱团go",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "fid-btn": "index/bottom/bottom"
+    "fid-btn": "pages/index/bottom/bottom",
+    "daychoose": "components/daychoose/daychoose"
   }
 }

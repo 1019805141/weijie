@@ -4,100 +4,55 @@
     <view class="container">
         <view class="index_top_search">
             <image src="../../../image/search.png" style="{{inputImg}}"></image>
-            <input type="text" placeholder="搜索" bindinput="searchInput" placeholder-style="color:#808080;text-align:center" />
+            <input type="text" placeholder="搜索" bindinput="searchInput" bindconfirm="bindconfirm"  placeholder-style="color:#808080;text-align:center" />
           </view>
-          <view class="index_cp">
-            <image src="../../../image/cpimg.png"></image>
+          <view class="zanwu" style="{{list.length>0?'display:none':'display:block'}}">
+            <image src="../../../image/zanwu.png" ></image>
+            <text>暂无商品信息</text>
+          </view>
+          <view class="index_cp" wx:for="{{list}}" wx:key="key" style="{{list.length>0?'display:block':'display:none'}}">
+            <image src="{{imgUrl + item.img}}" bindtap="goCp" data-id="{{item.id}}"></image>
             <view class="index_cp_right">
-              <view class="index_cp_right_title">沙窝林子天津沙窝萝卜</view>
-              <p>新鲜美味，富含多种维生素C</p>
-              <view class="index_cp_right_bq">次日到达</view>
-              <view class="index_cp_fenshu">已售出：999份  剩余：<span>23</span>份</view>
-              <view class="index_cp_jiage">
-                <p>团购价:<span>￥4.00</span></p>
-                <view>立即抢购</view>
+              <view class="index_cp_right_title" bindtap="goCp" data-id="{{item.id}}">{{item.name}}</view>
+              <p bindtap="goCp" data-id="{{item.id}}">{{item.account}}</p>
+              <view class="index_cp_right_bq" bindtap="goCp" data-id="{{item.id}}">{{item.service_date == 1?'次日送达':item.service_date == 2?'隔日送达':'快递送达'}}</view>
+              <view class="index_cp_fenshu" bindtap="goCp" data-id="{{item.id}}">已售出：{{item.sales}}份 剩余：<span>{{item.stock}}</span>份</view>
+              <view class="index_cp_jiage" >
+                <p>团购价:<span>￥{{item.price}}</span></p>
+                <view>
+                  <!-- 加减 -->
+                  <view class="stepper">
+                    <text class="{{minusStatus}} jia jia2" data-index="{{index}}" bindtap="bindMinus" data-id="{{item.id}}" data-num="{{item.num}}" wx:if="{{item.num != 0}}">-</text>
+                    <view wx:if="{{item.num != 0}}">{{item.num}}</view>
+                    <text class="normal jia jia1" data-index="{{index}}" data-id="{{item.id}}" bindtap="bindPlus">+</text>
+                  </view>
+                </view>
               </view>
             </view>
           </view>
-          <view class="index_cp">
-            <image src="../../../image/cpimg.png"></image>
-            <view class="index_cp_right">
-              <view class="index_cp_right_title">沙窝林子天津沙窝萝卜</view>
-              <p>新鲜美味，富含多种维生素C</p>
-              <view class="index_cp_right_bq">次日到达</view>
-              <view class="index_cp_fenshu">已售出：999份  剩余：<span>23</span>份</view>
-              <view class="index_cp_jiage">
-                <p>团购价:<span>￥4.00</span></p>
-                <view>立即抢购</view>
-              </view>
-            </view>
-          </view>
-          <view class="index_cp">
-            <image src="../../../image/cpimg.png"></image>
-            <view class="index_cp_right">
-              <view class="index_cp_right_title">沙窝林子天津沙窝萝卜</view>
-              <p>新鲜美味，富含多种维生素C</p>
-              <view class="index_cp_right_bq">次日到达</view>
-              <view class="index_cp_fenshu">已售出：999份  剩余：<span>23</span>份</view>
-              <view class="index_cp_jiage">
-                <p>团购价:<span>￥4.00</span></p>
-                <view>立即抢购</view>
-              </view>
-            </view>
-          </view>
-          
     </view>
 </view>
-<view class="container">
+<view class="container" wx:if="{{jxList.length>0}}">
     <view class="title">
         <i></i>
         <view>精选产品</view>
     </view>
     <view class="row">
-        <view class="list_box">
-            <image src="../../../image/cpimg2.png"></image>
+        <view class="list_box" bindtap="goqg" data-id="{{item.id}}" wx:for="{{jxList}}" wx:key="key">
+            <image src="{{imgUrl + item.img}}"></image>
             <view>
-                <view class="list_bq"><p>热销</p>小青菜 约400g</view>
-                <view class="list_ms">火锅食材 新鲜蔬菜</view>
+                <view class="list_bq"><p>热销</p>{{item.name}}</view>
+                <view class="list_ms">{{item.account}}</view>
                 <view class="list_jine">
-                  <p>￥<span>4.99</span></p>
-                  <view>立即抢购</view>
+                  <p>￥<span>{{item.price}}</span></p>
+                  <view bindtap="goqg" data-id="{{item.id}}">立即抢购</view>
                 </view>
             </view>
         </view>
-        <view class="list_box">
-          <image src="../../../image/cpimg2.png"></image>
-          <view>
-              <view class="list_bq"><p>热销</p>小青菜 约400g</view>
-              <view class="list_ms">火锅食材 新鲜蔬菜</view>
-              <view class="list_jine">
-                <p>￥<span>4.99</span></p>
-                <view>立即抢购</view>
-              </view>
-          </view>
-      </view>
-      <view class="list_box">
-        <image src="../../../image/cpimg2.png"></image>
-        <view>
-            <view class="list_bq"><p>热销</p>小青菜 约400g</view>
-            <view class="list_ms">火锅食材 新鲜蔬菜</view>
-            <view class="list_jine">
-              <p>￥<span>4.99</span></p>
-              <view>立即抢购</view>
-            </view>
-        </view>
-    </view>
-    <view class="list_box">
-      <image src="../../../image/cpimg2.png"></image>
-      <view>
-          <view class="list_bq"><p>热销</p>小青菜 约400g</view>
-          <view class="list_ms">火锅食材 新鲜蔬菜</view>
-          <view class="list_jine">
-            <p>￥<span>4.99</span></p>
-            <view>立即抢购</view>
-          </view>
-      </view>
-  </view>
+
     </view>
     
 </view>
+
+
+<fid-btn p='{{p}}' bind:myevent="onMyEvent" id="list" style="display:none"></fid-btn>

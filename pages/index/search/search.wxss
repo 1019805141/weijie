@@ -86,15 +86,6 @@ page{
   .index_cp_jiage>p>span{
     font-weight: bold;
   }
-  .index_cp_jiage>view{
-      background: #e94638;
-      color: #ffffff;
-      text-align: center;
-      float: right;
-      font-size: 28rpx;
-      border-radius: 50rpx;
-      padding: 6rpx 18rpx;
-  }
   .index_cp:last-child{
       border-bottom: none;
   }
@@ -136,6 +127,13 @@ page{
     margin: 0 auto;
     margin-bottom: 20rpx;
     display: block;
+    border-radius:10rpx 10rpx 0 0;
+}
+.list_bq{
+  white-space:nowrap;
+text-overflow:ellipsis;
+-webkit-text-overflow:ellipsis;
+overflow:hidden;
 }
 .list_bq>p{
   background: #f06e4b;
@@ -160,6 +158,10 @@ page{
   margin-top: 14rpx;
   margin-left: 20rpx;
   margin-bottom: 30rpx;
+  white-space:nowrap;
+text-overflow:ellipsis;
+-webkit-text-overflow:ellipsis;
+overflow:hidden;
 }
 .list_jine{
   overflow: hidden;
@@ -171,7 +173,7 @@ page{
   margin-left: 20rpx;
 }
 .list_jine>p>span{
-  font-size: 34rpx;
+  font-size: 32rpx;
 }
 .list_jine>view{
   background: #e94638;
@@ -182,4 +184,101 @@ page{
       border-radius: 50rpx;
       padding: 6rpx 18rpx;
       margin-right: 20rpx;
+}
+.zanwu{
+  margin: 50rpx 0;
+}
+.zanwu image{
+  width: 305rpx;
+  height:331rpx;
+  display: block;
+  margin: 0 auto;
+}
+.zanwu text{
+  text-align: center;
+  margin-top: 30rpx;
+  display: block;
+  font-size: 28rpx;
+  color: #a6a6a9;
+}
+
+
+
+.index_cp_jiage>view{
+  float: right;
+}
+
+/*主容器*/
+
+.stepper { 
+  width: 86px; 
+  height: 26px; 
+  /*给主容器设一个边框*/
+  border-radius: 3px; 
+  margin:0 auto; 
+} 
+
+  
+
+/*加号和减号*/
+
+.stepper text { 
+  text-align: center; 
+  float: left; 
+} 
+
+  
+
+/*数值*/
+
+.stepper input { 
+
+  width: 40px; 
+
+  height: 26px; 
+
+  float: left; 
+
+  margin: 0 auto; 
+
+  text-align: center; 
+
+  font-size: 12px; 
+
+  /*给中间的input设置左右边框即可*/
+
+  border-left: 1px solid #ccc; 
+
+  border-right: 1px solid #ccc; 
+
+} 
+.jia{
+  background: #e94638;
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  color: #ffffff;
+  line-height: 40rpx;
+  text-align: center;
+  position:relative;
+}
+.jia1{
+  position: absolute;
+  right:30rpx;
+}
+/*普通样式*/
+.stepper .disabled{ 
+  color: #777777; 
+  background: #dfdfdf;
+}
+.stepper view{
+  float: right;
+  margin: 0 10rpx;
+  margin-right: 58rpx;
+}
+.jia2{
+  float: left;
+  margin-left: 20rpx;
+  color: #777777; 
+  background: #dfdfdf;
 }

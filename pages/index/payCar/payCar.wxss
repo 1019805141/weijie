@@ -1,0 +1,403 @@
+/* pages/index/payCar/payCar.wxss */
+page {
+    background: #f2f2f2;
+}
+
+.title {
+    margin: 20rpx 0;
+}
+
+.title>i {
+    background: #e94638;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    width: 12rpx;
+    height: 34rpx;
+    display: block;
+    float: left;
+    margin-top: 6rpx;
+    margin-right: 10rpx;
+}
+
+.title>view {
+    font-size: 32rpx;
+}
+
+.bg {
+    background: #ffffff;
+    padding: 20rpx;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+    overflow: hidden;
+}
+
+.list {
+    overflow: hidden;
+    position: relative;
+    margin-top: 30rpx;
+}
+
+.cp_box {
+    background: #ffffff;
+    border-radius: 10rpx;
+    float: right;
+    width: 90%;
+    box-shadow: 0px 2px 10px #f1f1f1;
+}
+
+.cp_title {
+    padding: 20rpx;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 28rpx;
+}
+
+.cp_title>p {
+    float: right;
+}
+
+.cp_list {
+    overflow: hidden;
+    margin-top: 10rpx;
+    padding-left: 20rpx;
+    margin-bottom: 10rpx;
+}
+
+.cp_list>image {
+    width: 130rpx;
+    height: 130rpx;
+    float: left;
+    display: block;
+    margin-right: 10rpx;
+    border-radius: 10rpx;
+}
+
+.cp_list_text {
+    float: left;
+    width: 75%;
+
+}
+
+.cp_list_text>view {
+    font-size: 30rpx;
+    margin-bottom: 4rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.cp_list_text>div>p {
+    font-size: 28rpx;
+    color: #e94638;
+}
+
+.cp_list_text>div>p>span {
+    font-weight: bold;
+    font-size: 36rpx;
+}
+
+.cp_num {
+    font-size: 28rpx;
+    color: #666666;
+    float: right;
+    position: relative;
+    bottom: 0;
+    padding-right: 20rpx;
+}
+
+checkbox .wx-checkbox-input {
+    width: 34rpx;
+    height: 34rpx;
+    border-radius: 50%;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    background: #e94638;
+    border-color: #e94638;
+}
+
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    width: 20rpx;
+    height: 20rpx;
+    line-height: 20rpx;
+    text-align: center;
+    font-size: 22rpx;
+    color: #fff;
+    background: transparent;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.weui-check {
+    position: absolute;
+    left: 0;
+    top: 30%;
+}
+
+.cp_list_text>div>i {
+    text-decoration: line-through;
+    color: #a8a6a7;
+    display: inline-block;
+    margin-left: 10rpx;
+}
+
+.del {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+    font-size: 28rpx;
+    color: #e94638;
+}
+
+.stepper {
+    height: 26px;
+    /*给主容器设一个边框*/
+    border-radius: 3px;
+    margin: 0 auto;
+    float: right;
+    width: 180rpx;
+}
+
+
+
+/*加号和减号*/
+
+.stepper text {
+    text-align: center;
+    float: left;
+}
+
+
+
+/*数值*/
+
+.stepper input {
+
+    width: 40px;
+
+    height: 26px;
+
+    float: left;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    /*给中间的input设置左右边框即可*/
+
+    border-left: 1px solid #ccc;
+
+    border-right: 1px solid #ccc;
+
+}
+
+.jia {
+    background: #e94638;
+    border-radius: 50%;
+    width: 40rpx;
+    height: 40rpx;
+    color: #ffffff;
+    line-height: 39rpx;
+    text-align: center;
+    position: relative;
+}
+
+.jia1 {
+    position: absolute;
+    right: 0rpx;
+}
+
+/*普通样式*/
+.stepper .disabled {
+    color: #777777;
+    background: #dfdfdf;
+}
+
+.stepper view {
+    float: right;
+    margin: 0 10rpx;
+    margin-right: 68rpx;
+}
+
+.jia2 {
+    float: left;
+    margin-left: 24rpx;
+    color: #777777;
+    background: #dfdfdf;
+}
+
+
+.row {
+    margin-left: -15rpx;
+    margin-right: -15rpx;
+    overflow: hidden;
+    margin-bottom: 160rpx;
+}
+
+.list_box {
+    background: #ffffff;
+    border-radius: 10rpx;
+    box-shadow: 0px 2px 10px #f1f1f1;
+    float: left;
+    width: calc(50% - 30rpx);
+    margin: 15rpx;
+}
+
+.list_box>image {
+    width: 330rpx;
+    height: 260rpx;
+    margin: 0 auto;
+    margin-bottom: 20rpx;
+    display: block;
+    border-radius: 10rpx 10rpx 0 0;
+}
+
+.list_bq>p {
+    background: #f06e4b;
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 24rpx;
+    margin-left: 20rpx;
+    padding: 2rpx 10rpx;
+    border-radius: 10rpx;
+    margin-right: 10rpx;
+}
+
+.list_box {
+    color: #333333;
+    font-size: 28rpx;
+    padding-bottom: 20rpx;
+}
+
+.list_ms {
+    color: #777777;
+    font-size: 26rpx;
+    display: block;
+    margin-top: 14rpx;
+    margin-left: 20rpx;
+    margin-bottom: 30rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.list_bq {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.list_jine {
+    overflow: hidden;
+}
+
+.list_jine>p {
+    color: #e94638;
+    float: left;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+}
+
+.list_jine>p>span {
+    font-size: 34rpx;
+}
+
+.list_jine>view {
+    background: #e94638;
+    color: #ffffff;
+    text-align: center;
+    float: right;
+    font-size: 28rpx;
+    border-radius: 50rpx;
+    padding: 6rpx 18rpx;
+    margin-right: 20rpx;
+}
+
+.mar {
+    margin: 20rpx 0;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 8%;
+    left: 0;
+    background: #ffffff;
+    width: 100%;
+    height: 100rpx;
+}
+
+.bottom_check {
+    float: left;
+    width: 22%;
+    overflow: hidden;
+    line-height: 100rpx;
+}
+
+.bottom_check>view {
+    float: left;
+    font-size: 28rpx;
+}
+
+.bottom_check checkbox {
+    float: left;
+    padding-left: 30rpx;
+    margin-top: -4rpx;
+}
+
+.bottom_text {
+    line-height: 100rpx;
+    font-size: 28rpx;
+    float: left;
+    width: 46%;
+}
+
+.bottom_text>p {
+    color: #e94638;
+}
+
+.btn {
+    float: right;
+    background: #e94638;
+    text-align: center;
+    color: #ffffff;
+    width: 30%;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 30rpx;
+}
+
+.db {
+    bottom: 10.5% !important;
+}
+
+.db2 {
+    margin-bottom: 170rpx;
+}
+
+.zanwu {
+    margin: 50rpx 0;
+}
+
+.zanwu image {
+    width: 305rpx;
+    height: 331rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.zanwu text {
+    text-align: center;
+    margin-top: 30rpx;
+    display: block;
+    font-size: 28rpx;
+    color: #a6a6a9;
+}

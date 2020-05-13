@@ -71,6 +71,7 @@
 .table_content>view:nth-child(2) {
     border-right: 1px solid #e4e4ee;
     width: calc(40% - 1px);
+    font-size: 28rpx;
 }
 
 .table_content {
@@ -137,6 +138,13 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
     font-size: 32rpx;
 }
 
+.zanwushuju {
+    width: 100%;
+    padding: 100rpx 0;
+    border: 1px solid #e4e4ee;
+    text-align: center;
+    font-size: 28rpx;
+}
 
 /*mask*/
 
@@ -243,19 +251,23 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
     float: left;
     width: 33.333333%;
 }
-.table_top2{
+
+.table_top2 {
     overflow: hidden;
 }
-.table_top2>view:nth-child(1){
+
+.table_top2>view:nth-child(1) {
     float: left;
     width: calc(33.333333% - 1px);
     border-right: 1px solid #e4e4ee;
 }
-.table_top2>view:nth-child(2){
+
+.table_top2>view:nth-child(2) {
     float: left;
     width: calc(33.333333% - 1px);
     border-right: 1px solid #e4e4ee;
 }
+
 .table_top2>view {
     background: #f8f8ff;
     color: #797979;
@@ -265,54 +277,69 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
     text-align: center;
 
 }
-.table_top2{
+
+.table_top2 {
     border: 1px solid #e4e4ee;
 }
-.table_content2>view{
+
+.table_content2>view {
     float: left;
     width: 33.333333%;
     border-right: 1px solid #e4e4ee;
     font-size: 28rpx;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.table_content2{
+
+.table_content2 {
     line-height: 110rpx;
     height: 110rpx;
     text-align: center;
 }
-.table_content2>view:nth-child(2){
+
+.table_content2>view:nth-child(2) {
     float: left;
     width: calc(33.333333% - 2px);
     border-right: 1px solid #e4e4ee;
 }
-.table_content2>view:nth-child(3){
+
+.table_content2>view:nth-child(3) {
     float: left;
     width: calc(33.333333% - 1px);
     border-right: none;
     height: 110rpx;
     line-height: 110rpx;
 }
-.table_content2{
+
+.table_content2 {
     border: 1px solid #e4e4ee;
+    position: relative;
 }
-.table_content2 input{
+
+.table_content2 input {
     margin-top: 30rpx;
 }
-.title{
+
+.title {
     margin: 20rpx 0;
     font-size: 28rpx;
-    padding-left: 30rpx;
 }
-textarea{
+
+textarea {
     background: #f6f6f6;
     padding-left: 30rpx;
     margin-left: 30rpx;
     padding-top: 30rpx;
     font-size: 28rpx;
 }
-.btn_group{
+
+.btn_group {
     margin: 30rpx;
 }
-.btn_group>view:first-child{
+
+.btn_group>view:first-child {
     background: #e94638;
     color: #ffffff;
     text-align: center;
@@ -321,7 +348,8 @@ textarea{
     font-size: 28rpx;
     border-radius: 10rpx;
 }
-.btn_group>view:last-child{
+
+.btn_group>view:last-child {
     background: #dfdfdf;
     color: #777777;
     text-align: center;

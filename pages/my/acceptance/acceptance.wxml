@@ -11,18 +11,19 @@
             <view class="wid40">商品名称</view>
             <view class="wid40">商品数量</view>
         </view>
-        <checkbox-group bindchange="checkboxChange">
+    <view class="zanwushuju" style="{{list.length>0?'display:none':'display:block'}}">暂无到货信息</view>
+        <checkbox-group bindchange="checkboxChange" style="{{list.length>0?'display:block':'display:none'}}">
             <view class="table_content" wx:for="{{list}}">
                 <view class="wid20">
-                    <checkbox class="weui-check" value="{{item.id}}" checked="{{item.checked}}" />
+                    <checkbox class="weui-check" value="{{index}}" checked="{{item.checked}}" />
                 </view>
                 <view class="wid40">{{item.name}}</view>
-                <view class="wid40 num">{{item.num}}</view>
+                <view class="wid40 num">{{item.amount}}</view>
             </view>
         </checkbox-group>
     </view>
-    <view class="btn_red">正常验收</view>
-    <view class="btn_ye" bindtap="powerDrawer" data-statu="open">缺损验收</view>
+    <!-- <view class="btn_red">正常验收</view> -->
+    <view class="btn_red" bindtap="powerDrawer" data-statu="open">缺损验收</view>
 </view>
 
 
@@ -40,39 +41,22 @@
             <view>商品数量</view>
             <view>实际到货</view>
         </view>
-            <view class="table_content2">
+            <view class="table_content2" wx:for="{{queList}}" wx:key="key">
                 <view>
-                    榴莲
+                    {{item.name}}
                 </view>
-                <view class="num">5</view>
+                <view class="num">{{item.amount}}</view>
                 <view class="">
-                    <input type="text" placeholder="在此输入" />
+                    <input type="text" bindinput="changeinput" data-index="{{index}}" placeholder="在此输入" />
                 </view>
             </view>
-            <view class="table_content2">
-                <view>
-                    榴莲
-                </view>
-                <view class="num">5</view>
-                <view class="">
-                    <input type="text" placeholder="在此输入" />
-                </view>
-            </view>
-            <view class="table_content2">
-                <view>
-                    榴莲
-                </view>
-                <view class="num">5</view>
-                <view class="">
-                    <input type="text" placeholder="在此输入" />
-                </view>
-            </view>
+ 
     </view>
  </view>
- <view class="title">情况描述</view>
- <textarea name="" id="" cols="30" rows="10" placeholder="在此输入情况描述..."></textarea>
+ <view class="title" style="padding-left: 30rpx;">情况描述</view>
+ <textarea name="" id="" cols="30" rows="10" bindinput="formessage" placeholder="在此输入情况描述..."></textarea>
  <view class="btn_group">
-     <view>提交</view>
-     <view>取消</view>
+     <view bindtap="submit"  data-statu="close">提交</view>
+     <view data-statu="close">取消</view>
  </view>
 </view>

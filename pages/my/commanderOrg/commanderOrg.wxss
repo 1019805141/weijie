@@ -13,6 +13,12 @@ page {
     height: 338rpx;
     display: block;
 }
+.notice_p{
+    float: left;
+    color: #ff9600;
+    font-size: 28rpx;
+
+}
 
 .my {
     position: absolute;
@@ -29,6 +35,7 @@ page {
     display: block;
     float: left;
     margin-right: 20rpx;
+    border-radius: 50%;
 }
 
 .my_left>view {
@@ -42,7 +49,7 @@ page {
 }
 .my_left>view>p{
     font-size: 28rpx;
-    text-align: center;
+    text-align: left;
     margin-top: 10rpx;
     color: #ffffff;
     display: block;
@@ -55,14 +62,19 @@ page {
 }
 .my_right>view{
     font-size: 26rpx;
-    margin-top: 14rpx;
+    margin-bottom: 20rpx;
     text-align: right;
 }
-.my_right>view>image{
+.my_right>view image{
     width: 25rpx;
     height: 30rpx;
 }
-
+.my_right picker image{
+    width: 25rpx;
+    height: 15rpx;
+    float: right;
+    margin-top: 12rpx;
+}
 .order{
     border-radius: 20rpx;
     background: #ffffff;
@@ -180,7 +192,6 @@ swiper{
     overflow: hidden;
 }
 .my_right picker{
-    float: left;
 }
 .my_right>p>image{
     width:22rpx;
@@ -193,11 +204,12 @@ swiper{
 .picker{
     font-size: 28rpx;
     color: #ffffff;
+    float: left;
 }
 .order_list{
     text-align: center;
     float: left;
-    width: 32.333333%;
+    width: 49.333333%;
 }
 .order_list>p{
     color: #e94638;

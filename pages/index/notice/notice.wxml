@@ -1,9 +1,9 @@
 <!--pages/index/notice/notice.wxml-->
 <view class="topline"></view>
 <view class="container">
-    <view class="title">今日白菜特卖！</view>
-    <view class="time">2020.01.01</view>
+    <view class="title">{{detail.title}}</view>
+    <view class="time">{{detail.updated_at}}</view>
     <view class="content">
-        <view>    这里是通知公告内容这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容，这里是通知公告内容。</view>
+        <rich-text nodes="{{detail.content}}"></rich-text>
     </view>
 </view>

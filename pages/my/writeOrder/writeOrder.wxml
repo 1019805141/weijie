@@ -3,41 +3,52 @@
 <view class="container">
     <view class="box">
         <view class="box_top">
-            <image src="../../../image/mytx.png"></image>
+            <image src="{{user.wechat_avatar}}"></image>
             <view class="box_top_text">
-                <view>用户小张</view>
-                <p>188123456</p>
-                <p>山东省济南市槐荫区报业文苑A区</p>
+                <view>{{user.receiver_name}}</view>
+                <p>{{user.receiver_phone}}</p>
             </view>
         </view>
         <view class="box_bottom">
-            未取货订单 2
+            未取货订单 {{orderList.length}}
         </view>
     </view>
-    <checkbox-group bindchange="checkboxChange">
-        <view class="list" wx:for="{{order}}" wx:key="key">
-                <checkbox class="weui-check" value="{{item.id}}" checked="{{item.checked}}" />
-                <view class="cp_box">
-                    <view class="cp_title">订单号：{{item.order}}<p>商品数量：{{item.num}}</p></view>
-                    <view class="cp_list" wx:for="{{item.cp}}" wx:for-index='index' wx:for-item="items">
-                        <image src="{{items.img}}"></image>
-                        <view class="cp_list_text">
-                            <view>{{items.name}}</view>
-                            <p>￥<span>{{items.price}}</span></p>
-                        </view>
-                        <view class="cp_num">X{{items.num}}</view>
-                    </view>
+    <checkbox-group bindchange="checkboxChangeAll" style="{{orderList.length>0?'display:block':'display:none'}}">
+        <view class="list" wx:for="{{orderList}}" wx:key="key">
+            <checkbox class="weui-check" value="{{index}}" checked="{{item.checked}}" />
+            <view class="cp_box">
+                <view class="cp_title">订单号：{{item.order_number}}
                 </view>
+                <!-- <checkbox-group bindchange="checkboxChange"> -->
+                    <view class="cp_list" wx:for="{{item.goods_list}}" wx:for-index='index' wx:for-item="items">
+                        <!-- <checkbox value="{{items.id}}" data-index="{{index}}" checked="{{items.checked}}" /> -->
+                        <image src="{{imgUrl + items.get_goods_info.img}}"></image>
+                        <view class="cp_list_text">
+                            <view>{{items.get_goods_info.name}}</view>
+                            <p>￥<span>{{items.get_goods_info.price}}</span></p>
+                        </view>
+                        <view class="cp_num">X{{items.amount}}</view>
+                    </view>
+                <!-- </checkbox-group> -->
             </view>
-        </checkbox-group>
+        </view>
+    </checkbox-group>
+
+    <view class="zanwu" style="{{orderList.length>0?'display:none':'display:block'}}">
+        <image src="../../../image/zanwu.png" ></image>
+        <text>您的订单已全部核销</text>
+      </view>
+
+
+
 </view>
 <view class="bottom">
-        <checkbox-group bindchange="checkboxChangeAll" class="bottom_check">
-            <checkbox value="{{item.id}}" checked="{{item.checked}}" />
-            <view>全选</view>
-        </checkbox-group>
-        <view class="bottom_text">
-            共<p>4</p>件商品 已选择<p>4</p>件
-        </view>
-        <view class="btn">确认核销</view>
+    <checkbox-group bindchange="checkboxChangeAllss" class="bottom_check">
+        <checkbox value="全选" checked="{{item.checked}}" />
+        <view>全选</view>
+    </checkbox-group>
+    <view class="bottom_text">
+        共<p>{{orderList.length}}</p>笔订单 已选择<p>{{list.length==0?'0':list.length}}</p>笔
+    </view>
+    <view class="btn" bindtap="goWrite">确认核销</view>
 </view>

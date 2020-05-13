@@ -29,10 +29,11 @@ page {
     display: block;
     float: left;
     margin-right: 20rpx;
+    border-radius: 50%;
 }
 
 .my_left>view {
-    font-size: 36rpx;
+    font-size: 34rpx;
     color: #ffffff;
     float: left;
     margin-right: 20rpx;
@@ -93,7 +94,7 @@ page {
 .list{
     background: #ffffff;
     border-radius: 20rpx;
-    margin-top: 30rpx;
+    margin-top: 20rpx;
 }
 .list_box>image:first-child{
     width: 36rpx;
@@ -124,7 +125,7 @@ page {
 .erweima{
     margin-top: 30rpx;
     text-align: center;
-    margin-bottom: 30rpx;
+    margin-bottom: 60rpx;
 }
 .erweima>view{
     font-size: 30rpx;
@@ -137,3 +138,10 @@ page {
     margin: 0 auto;
     margin-top: 20rpx;
 }
+.index_banner{
+    margin-top: 30rpx;
+  }
+  .index_banner image{
+    width: 100%;
+    border-radius: 20rpx;
+  }

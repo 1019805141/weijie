@@ -1,0 +1,70 @@
+<!--pages/index/payCar/payCar.wxml-->
+<view class="topline"></view>
+<view class="container">
+    <view class="bg">
+        <view class="title">
+            <i></i>
+            <view>购物车商品</view>
+        </view>
+        <checkbox-group bindchange="checkboxChange" style="{{list.length>0?'display:block':'display:none'}}">
+            <view class="list" wx:for="{{list}}" wx:key="key">
+                <checkbox class="weui-check" value="{{index}}" data-index="{{index}}" checked="{{item.checked}}" />
+                <view class="cp_box">
+                    <view class="cp_list">
+                        <image src="{{imgUrl + item.get_goods_info.img}}"></image>
+                        <view class="cp_list_text">
+                            <view style="width: 80%;">{{item.get_goods_info.name}}</view>
+                            <div style="display: block;">
+                                <p>￥<span>{{item.get_goods_info.price}}</span></p>
+                                <i>￥{{item.get_goods_info.market_price}}</i>
+                            </div>
+                            <view class="stepper">
+                                <text class="{{minusStatus}} jia jia2" data-id="{{item.id}}" data-index="{{index}}" data-num="{{item.num}}" bindtap="bindMinus" >-</text>
+                                <view>{{item.num}}</view>
+                                <text class="normal jia jia1" data-index="{{index}}" data-id="{{item.id}}" bindtap="bindPlus">+</text>
+                              </view>
+                        </view>
+                      
+                    </view>
+                </view>
+                <view class="del" data-id="{{item.id}}" bindtap="carDel">删除</view>
+            </view>
+        </checkbox-group>
+       
+        <view class="zanwu" style="{{list.length>0?'display:none':'display:block'}}">
+            <image src="../../../image/zanwu.png" ></image>
+            <text>购物车暂无商品信息</text>
+          </view>
+    </view>
+    
+    <view class="title" wx:if="{{jxList.length>0}}">
+        <i></i>
+        <view>精选产品</view>
+    </view>
+    <view class="row" wx:if="{{jxList.length>0}}">
+        <view class="list_box" bindtap="goqg" data-id="{{item.id}}" wx:for="{{jxList}}" wx:key="key">
+            <image src="{{imgUrl + item.img}}"></image>
+            <view>
+                <view class="list_bq"><p>热销</p>{{item.name}}</view>
+                <view class="list_ms">{{item.account}}</view>
+                <view class="list_jine">
+                  <p>￥<span>{{item.price}}</span></p>
+                  <view bindtap="goqg" data-id="{{item.id}}">立即抢购</view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+
+</view>
+<view class="bottom {{systemInfo?'db':''}}" >
+    <checkbox-group bindchange="checkboxChangeAll" class="bottom_check">
+        <checkbox value="全选" checked="{{item.checked}}" />
+        <view>全选</view>
+    </checkbox-group>
+    <view class="bottom_text">
+        总计金额：<p>￥<span>{{payNum}}</span></p>
+    </view>
+    <view class="btn" bindtap="goPay">确认支付</view>
+</view>
+<fid-btn p='{{p}}' id="list"></fid-btn>

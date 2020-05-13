@@ -1,0 +1,29 @@
+/* pages/index/position/position.wxss */
+.dw{
+    width: 750rpx;
+    height: 466rpx;
+    margin-top: 20%;
+}
+.title{
+    font-weight: bold;
+    font-size: 30rpx;
+    text-align: center;
+    margin-top: 50rpx;
+    margin-bottom: 30rpx;
+}
+.text{
+    font-size: 26rpx;
+    text-align: center;
+    
+}
+.button{
+    width: 300rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 0 auto;
+    background: #e94638;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 70rpx;
+    border-radius:100rpx;
+}

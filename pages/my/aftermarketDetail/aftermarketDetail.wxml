@@ -1,0 +1,88 @@
+<!--pages/my/aftermarketDetail/aftermarketDetail.wxml-->
+<view class="topline"></view>
+<view class="container">
+    <view class="box">
+        <view class="box_top">
+            <view>订单编号：{{detail.order_number}}</view>
+        </view>
+        <view class="cp_list" wx:for="{{detail.goods_list}}" wx:key='key'>
+            <image src="{{imgUrl + item.get_goods_info.img}}"></image>
+            <view class="cp_text">
+                <view>{{item.get_goods_info.name}}</view>
+                <view style="float: left; margin-top: 20rpx;"><p>￥<span>{{item.get_goods_info.price}}</span></p><div>￥{{item.get_goods_info.market_price}}</div></view>
+                <p>X{{item.amount}}</p>
+            </view>
+        </view>
+  
+        <view class="cp_jiage">
+            <p>商品金额</p>
+            <view>￥<span>{{detail.order_money}}</span></view>
+        </view>
+        <view class="ms">
+            <view>退款原因</view>
+            <p>{{detail.get_order_return.message }}</p>
+        </view>
+        <view class="ms">
+            <view>订单编号</view>
+            <p>{{detail.order_number}}</p>
+        </view>
+    </view>
+    <view class="btn1" bindtap="tongyi" data-id="{{detail.id}}">同意退款</view>
+    <view class="btn4" bindtap="jujue" data-id="{{detail.id}}">拒绝退款</view>
+</view>
+
+
+
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+ <!--drawer content-->
+ <view wx:if="{{motaltype == 1}}">
+    <view class="drawer_title">单个退款</view>
+    <view class="drawer_content">
+       <view class="table table2">
+           <view class="table_top2">
+               <view>商品名称</view>
+               <view>单价</view>
+               <view>商品数量</view>
+               <view>实际到货</view>
+           </view>
+               <view class="table_content2">
+                   <view>
+                       榴莲
+                   </view>
+                   <view class="num">5</view>
+                   <view class="num">5</view>
+                   <view class="">
+                       <input type="text" placeholder="在此输入" />
+                   </view>
+               </view>
+           
+       </view>
+    </view>
+    <view class="title">情况描述</view>
+    <textarea name="" id="" cols="30" rows="10" placeholder="在此输入情况描述..."></textarea>
+    <view class="btn_group">
+        <view>提交</view>
+        <view>取消</view>
+    </view>
+ </view>
+ <view wx:else>
+     <view class="motaiBox">
+         <view class="titlesss">请输入退款金额</view>
+         <view class="motaiBox_input">
+             <view>元</view>
+             <input type="number" />
+         </view>
+         <view class="titlesss">情况描述</view>
+         <textarea name="" id="" cols="30" rows="10" style="margin-left: 0;width: 96%;" placeholder="在此输入情况描述..."></textarea>
+         <view class="btn_group">
+            <view>提交</view>
+            <view>取消</view>
+        </view>
+     </view>
+ </view>
+
+</view>

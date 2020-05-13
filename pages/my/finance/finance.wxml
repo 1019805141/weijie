@@ -5,15 +5,18 @@
         <view class="top_text">
             <view class="top_left">
                 <view>账户余额</view>
-                <p><span>1555.00</span>元</p>
+                <p><span>{{priceList.commission}}</span>元</p>
             </view>
-            <view class="top_right">
-                <view><image src="../../../image/zhuyi.png"></image>佣金规则</view>
+            <view class="top_right" bindtap="goPay" data-price="{{priceList.commission}}">
+                <view>
+                    <image src="../../../image/zhuyi.png"></image>佣金规则
+                </view>
                 <div>提现</div>
             </view>
             <view class="top_bottom">
-                <view>已结算:2550元</view>
-                <view>累计收益:2145元</view>
+                <view>已结算:{{priceList.withdrawal_commission}}元</view>
+                <view>累计收益:{{priceList.cumulative_commission}}元</view>
+                <view>提现中金额:{{priceList.audit_commission}}</view>
             </view>
         </view>
         <image class="top_bg" src="../../../image/bg.png"></image>
@@ -25,33 +28,21 @@
             <i></i>
             <view>收益明细</view>
         </view>
-        <view class="list">
+        <view class="list" wx:for="{{list}}" style="{{list.length>0?'display:block':'display:none'}}">
             <view class="list_left">
-                <view>S39587741567</view>
-                <p>2020-03-02 09:41:58</p>
+                <view>{{item.account}}</view>
+                <p>{{item.created_at}}</p>
             </view>
-            <view class="list_right su">+5.80元</view>
+            <view class="list_right su" wx:if="{{item.status == 1}}">+{{item.num}}元</view>
+            <view class="list_right" wx:if="{{item.status == 2}}">-{{item.num}}元</view>
         </view>
-        <view class="list">
-            <view class="list_left">
-                <view>S39587741567</view>
-                <p>2020-03-02 09:41:58</p>
-            </view>
-            <view class="list_right">-5.80元</view>
+        <view class="zanwu" style="{{list.length>0?'display:none':'display:block'}}">
+            <image src="../../../image/zanwu2.png"></image>
+            <text>暂无收益明细信息</text>
         </view>
-        <view class="list">
-            <view class="list_left">
-                <view>S39587741567</view>
-                <p>2020-03-02 09:41:58</p>
-            </view>
-            <view class="list_right su">+5.80元</view>
-        </view>
-        <view class="list">
-            <view class="list_left">
-                <view>S39587741567</view>
-                <p>2020-03-02 09:41:58</p>
-            </view>
-            <view class="list_right">-5.80元</view>
-        </view>
+
+        <view style="{{list.length>0?'display:block':'display:none'}}">
+            <view class="bottom_footer" style="{{bottomStyle}}">已经到底啦~</view>
+          </view>
     </view>
 </view>

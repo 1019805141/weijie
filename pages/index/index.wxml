@@ -15,21 +15,35 @@
   <view class='navbar-title'>
     <image src="../../image/logo.png" bindtap="dsad" class="logo"></image>
     <view>薇姐爱家</view>
-
   </view>
 </view>
 
+
+
 <view class="container">
   <view class="index_top">
-    <view class="index_tx">
-      <image src="../../image/mytx.png"></image>
+    <view class="index_tx" wx:if="{{teamType ==1}}">
+      <image src="{{teamer.get_user_info.wechat_avatar}}"></image>
       <view class="index_tx_text">
-        <view>社区团长小张</view>
+        <view>{{teamer.name}}</view>
         <p>
-          <image src="../../image/dw.png"></image>自提点：报业文苑南门A区-南门
+          <image src="../../image/dw.png"></image>自提点：{{teamer.address}}
         </p>
       </view>
-      <view class="index_tx_right">
+      <view class="index_tx_right" bindtap="tarCommander">
+        <image src="../../image/ren.png"></image>
+        更换>
+      </view>
+    </view>
+    <view class="index_tx" wx:if="{{teamType ==2}}">
+      <image src="{{teamer.get_teamer_info.get_user_info.wechat_avatar}}"></image>
+      <view class="index_tx_text">
+        <view>{{teamer.get_teamer_info.name}}</view>
+        <p>
+          <image src="../../image/dw.png"></image>自提点：{{teamer.get_teamer_info.address}}
+        </p>
+      </view>
+      <view class="index_tx_right" bindtap="tarCommander">
         <image src="../../image/ren.png"></image>
         更换>
       </view>
@@ -41,9 +55,18 @@
       </view>
       <view class="index_top_search">
         <image src="../../image/search.png" style="{{inputImg}}"></image>
-        <input type="text" placeholder="查找" bindinput="searchInput"
-          placeholder-style="color:#808080;text-align:center" />
+        <input type="text" placeholder="查找" confirm-type="search" bindinput="searchInput" bindconfirm="bindconfirm"
+          focus='{{inputShowed}}' placeholder-style="color:#808080;text-align:center" />
       </view>
+    </view>
+    <view class="index_banner">
+      <swiper autoplay="{{autoplay}}" interval="{{interval}}"  bindchange="bindchange" style="height:{{imgheights[current]}}rpx;" duration="{{duration}}">
+        <block wx:for="{{bannerList}}" wx:key="key">
+          <swiper-item>
+            <image class="banner" data-id='{{index}}' src="{{imgUrl + item.img}}" mode="widthFix" bindload="imageLoad"></image>
+          </swiper-item>
+        </block>
+      </swiper>
     </view>
   </view>
 </view>
@@ -51,39 +74,25 @@
 <view class="container">
   <view class="notice">
     <image src="../../image/tongzhi.png"></image>
-    <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="4000">
+    <p class="notice_p" style="{{noticeList.length>0?'display:none':'display:block'}}">暂无公告</p>
+    <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="4000"
+      style="{{noticeList.length>0?'display:block':'display:none'}}">
       <block>
-        <swiper-item>
+        <swiper-item bindtap="goNotice" wx:for="{{noticeList}}" wx:key="key" data-id="{{item.id}}">
           <navigator class="swiper_item" open-type="navigate" hover-class="none">
             <p>【通知公告】</p>
-            <text class="notice_text">今日白菜特卖今日白菜特卖今日白菜特卖！！</text>
+            <text class="notice_text">{{item.title}}</text>
           </navigator>
         </swiper-item>
-        <swiper-item>
-          <navigator class="swiper_item" open-type="navigate" hover-class="none">
-            <p>【通知公告】</p>
-            <text class="notice_text">今日白菜特卖今日白菜特卖今日白菜特卖！！</text>
-          </navigator>
-        </swiper-item>
-        <swiper-item>
-          <navigator class="swiper_item" open-type="navigate" hover-class="none">
-            <p>【通知公告】</p>
-            <text class="notice_text">今日白菜特卖今日白菜特卖今日白菜特卖！！</text>
-          </navigator>
-        </swiper-item>
-        <swiper-item>
-          <navigator class="swiper_item" open-type="navigate" hover-class="none">
-            <p>【通知公告】</p>
-            <text class="notice_text">今日白菜特卖今日白菜特卖今日白菜特卖！！</text>
-          </navigator>
-        </swiper-item>
+
       </block>
     </swiper>
+    <view class="right_notice" bindtap="moreNotice">更多></view>
   </view>
   <view class="daojishi">
     <image src="../../image/t_title.png"></image>
     <view class='name_right'>
-      <p>距离结束</p><text>{{day}}</text>
+      <p>距离结束</p>
       <p>天</p> <text>{{hou}}</text>
       <p>时</p><text>{{min}}</text>
       <p>分</p><text>{{sec}}</text>
@@ -93,47 +102,25 @@
 </view>
 <view class="container">
   <view class="icon_group">
-    <view class="icon_box">
-      <image src="../../image/icon1.png"></image>
-      <view>时令水果</view>
-    </view>
-    <view class="icon_box">
-      <image src="../../image/icon2.png"></image>
-      <view>新鲜蔬菜</view>
-    </view>
-    <view class="icon_box">
-      <image src="../../image/icon3.png"></image>
-      <view>肉蛋熟食</view>
-    </view>
-    <view class="icon_box">
-      <image src="../../image/icon4.png"></image>
-      <view>活鲜水产</view>
-    </view>
-    <view class="icon_box">
-      <image src="../../image/icon5.png"></image>
-      <view>粮油调味</view>
-    </view>
-    <view class="icon_box">
-      <image src="../../image/icon6.png"></image>
-      <view>日用百货</view>
-    </view>
-    <view class="icon_box">
-      <image src="../../image/icon7.png"></image>
-      <view>休闲食品</view>
-    </view>
-    <view class="icon_box">
-      <image src="../../image/icon8.png"></image>
-      <view>安心乳品</view>
-    </view>
-    <view class="icon_box">
-      <image src="../../image/icon9.png"></image>
-      <view>酒水饮料</view>
-    </view>
-    <view class="icon_box">
-      <image src="../../image/icon10.png"></image>
-      <view>更多分类</view>
+    <view class="icon_box" bindtap="goList" wx:for="{{iconList}}" data-id="{{item.id}}" data-index="{{index}}">
+      <image src="{{imgUrl + item.icon}}"></image>
+      <view>{{item.name}}</view>
     </view>
   </view>
+
+  <view class="index_banner">
+    <swiper autoplay="{{autoplay}}" interval="{{interval}}" bindchange="bindchange" duration="{{duration}}"
+      style="height:{{imgheights[current]}}rpx;">
+      <block wx:for="{{imgList}}" wx:key="key">
+        <swiper-item>
+          <image class="banner" data-id='{{index}}' src="{{imgUrl + item.img}}" mode="widthFix" bindload="imageLoad">
+          </image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+
 </view>
 <view class="jiange"></view>
 <view class="container">
@@ -141,32 +128,45 @@
     <view wx:for="{{leixingList}}" wx:key="{{index}}" class="view-parent2">
       <view bindtap='dianjis' data-index='{{index}}' data-label="{{item.id}}" data-value="{{item.value}}"
         class="view-item {{index==currentIndexs?'acrivws':''}}">
-        {{item.label}}</view>
+        {{item.name}}</view>
     </view>
   </scroll-view>
-  <view class="index_cp" wx:for="{{list}}" wx:key="key">
-    <image src="../../image/cpimg.png"></image>
+  <view class="index_cp" wx:for="{{list}}" wx:key="key" style="{{list.length>0?'display:block':'display:none'}}">
+    <image src="{{imgUrl + item.img}}" bindtap="goCp" data-id="{{item.id}}"></image>
     <view class="index_cp_right">
-      <view class="index_cp_right_title">沙窝林子天津沙窝萝卜</view>
-      <p>新鲜美味，富含多种维生素C</p>
-      <view class="index_cp_right_bq">次日到达</view>
-      <view class="index_cp_fenshu">已售出：999份 剩余：<span>23</span>份</view>
+      <view class="index_cp_right_title" bindtap="goCp" data-id="{{item.id}}">{{item.name}}</view>
+      <p bindtap="goCp" data-id="{{item.id}}">{{item.account}}</p>
+      <view class="index_cp_right_bq" bindtap="goCp" data-id="{{item.id}}">
+        {{item.service_date == 1?'次日送达':item.service_date == 2?'隔日送达':'快递送达'}}</view>
+      <view class="index_cp_fenshu" bindtap="goCp" data-id="{{item.id}}">已售出：{{item.sales}}份
+        剩余：<span>{{item.stock}}</span>份</view>
       <view class="index_cp_jiage">
-        <p>团购价:<span>￥4.00</span></p>
+        <p>团购价:<span>￥{{item.price}}</span></p>
         <view>
           <!-- 加减 -->
           <view class="stepper">
-            <text class="{{minusStatus}} jia jia2" bindtap="bindMinus" wx:if="{{num != 0}}">-</text>
-            <view wx:if="{{num != 0}}">{{num}}</view>
-            <text class="normal jia jia1" bindtap="bindPlus">+</text>
+            <text class="{{minusStatus}} jia jia2" data-index="{{index}}" bindtap="bindMinus" data-id="{{item.id}}"
+              data-num="{{item.num}}" wx:if="{{item.num != 0}}">-</text>
+            <view wx:if="{{item.num != 0}}">{{item.num}}</view>
+            <text class="normal jia jia1" data-index="{{index}}" data-id="{{item.id}}" bindtap="bindPlus">+</text>
           </view>
         </view>
       </view>
     </view>
   </view>
 </view>
+<view style="{{list.length>0?'display:block':'display:none'}}">
+  <view class="bottom_footer" style="{{bottomStyle}}">已经到底啦~</view>
+</view>
 
-<fid-btn p='{{p}}'></fid-btn>
+<view class="zanwu" style="{{list.length>0?'display:none':'display:block'}}">
+  <image src="../../image/zanwu.png"></image>
+  <text>暂无商品信息</text>
+</view>
+
+
+
+<fid-btn p='{{p}}' bind:myevent="onMyEvent" id="list"></fid-btn>
 
 <view class="modal modal-bottom-dialog" hidden="{{hideFlag}}">
   <view class="modal-cancel" bindtap="hideModal"></view>
@@ -193,12 +193,12 @@
   <image src="../../image/hide.png" class="fenxiang_hide" bindtap="fenxiangHide"></image>
   <view class="fenxiangbg_box">
     <view class="fenxiangcp">
-      <image src="../../image/fenxcp.png"></image>
-      <view>沙窝林子天津萝卜</view>
-      <p>￥4.00</p>
+      <image src="{{imgUrl + fxContent.img}}"></image>
+      <view>{{fxContent.name}}</view>
+      <p>￥{{fxContent.price}}</p>
     </view>
     <view class="fenxiang_er">
-      <image src="../../image/fenxiang_erweima.png"></image>
+      <image src="{{fxContent.qrcode}}"></image>
       <view class="fenxiang_er_text">
         <view>长按识别小程序二维码</view>
         <p>薇姐爱团Go 有用有趣有温度</p>
@@ -206,5 +206,6 @@
     </view>
     <image class="fenxiangbg_box_bg" src="../../image/fenxbg.jpg"></image>
   </view>
-  <image src="../../image/btn.png" class="fenxiang_btn"></image>
+  <image src="../../image/btn.png" bindtap="baocun" class="fenxiang_btn"></image>
 </view>
+<canvas canvas-id='share' style='width:602px;height:836px;position:fixed;top:100%;left:100%;'></canvas>

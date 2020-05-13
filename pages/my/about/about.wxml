@@ -1,0 +1,5 @@
+<!--pages/my/about/about.wxml-->
+<view class="topline"></view>
+<view class="container">
+    <rich-text nodes="{{content.value}}"></rich-text>
+</view>

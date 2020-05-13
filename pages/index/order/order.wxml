@@ -3,16 +3,16 @@
 <view class="bg">
     <view class="container">
         <view class="top">
-            <p>团长：社区团长小张</p>
-            <view>自提点：报业文苑南门A区-南门</view>
+            <p>团长：{{teamer.defaultTeamer.get_teamer_info.name}}</p>
+            <view>自提点：{{teamer.defaultTeamer.get_teamer_info.address}}</view>
         </view>
         <view class="input">
             <view>购买人：</view>
-            <input type="text" placeholder="请填写姓名" placeholder-style="color:#777777"/>
+            <input type="text" placeholder="请填写姓名" value="{{name}}" bindinput="forName" placeholder-style="color:#777777"/>
         </view>
         <view class="input">
             <view>手机号：</view>
-            <input type="text" placeholder="请输入手机号"/>
+            <input type="number" bindinput="forTel" value="{{tel}}"  placeholder="请输入手机号"/>
         </view>
     </view>
 </view>
@@ -25,25 +25,33 @@
             <i></i>
             <view>订单商品</view>
         </view>
-        <view class="cp_list">
-            <image src="../../../image/cplist.png"></image>
-            <view class="cp_text">
-                <view>海南千禧圣女果 小番茄 小西红柿 1kg </view>
-                <view style="float: left; margin-top: 20rpx;"><p>￥<span>9.99</span></p><div>￥9.99</div></view>
-                <p>X1</p>
+        <view wx:if="{{type ==1}}">
+            <view class="cp_list" wx:for="{{list}}" wx:key="key">
+                <image src="{{imgUrl + item.get_goods_info.img}}"></image>
+                <view class="cp_text">
+                    <view>{{item.get_goods_info.name}}</view>
+                    <view style="float: left; margin-top: 20rpx;"><p>￥<span>{{item.get_goods_info.price}}</span></p><div>￥{{item.get_goods_info.market_price}}</div></view>
+                    <p>X{{item.amount}}</p>
+                </view>
+            </view>
+            <view class="cp_jiage">
+                <p>商品金额</p>
+                <view>￥<span>{{price}}</span></view>
             </view>
         </view>
-        <view class="cp_list">
-            <image src="../../../image/cplist.png"></image>
-            <view class="cp_text">
-                <view>海南千禧圣女果 小番茄 小西红柿 1kg </view>
-                <view style="float: left; margin-top: 20rpx;"><p>￥<span>9.99</span></p><div>￥9.99</div></view>
-                <p>X1</p>
+        <view wx:else>
+            <view class="cp_list">
+                <image src="{{imgUrl + list.img}}"></image>
+                <view class="cp_text">
+                    <view>{{list.name}}</view>
+                    <view style="float: left; margin-top: 20rpx;"><p>￥<span>{{list.price}}</span></p><div>￥{{list.market_price}}</div></view>
+                    <p>X1</p>
+                </view>
             </view>
-        </view>
-        <view class="cp_jiage">
-            <p>商品金额</p>
-            <view>￥<span>9.99</span></view>
+            <view class="cp_jiage">
+                <p>商品金额</p>
+                <view>￥<span>{{list.price}}</span></view>
+            </view>
         </view>
     </view>
 </view>
@@ -52,14 +60,18 @@
     <view class="container">
         <view class="beizhu">
             <view>备注：</view>
-            <textarea name="" id="" cols="30" rows="10" placeholder="在此填写备注" placeholder-style="color:#777777"></textarea>
+            <textarea name="" id="" cols="30" rows="10" bindinput="forText" placeholder="在此填写备注" placeholder-style="color:#777777"></textarea>
         </view>
     </view>
 </view>
 <view class="bottom">
-    <view class="bottom_left">
+    <view class="bottom_left" wx:if="{{type == 1}}">
         <view>总计金额：</view>
-        <p>￥<span>9.99</span></p>
+        <p>￥<span>{{price}}</span></p>
     </view>
-    <view class="bottom_right">确认支付</view>
+    <view class="bottom_left" wx:else>
+        <view>总计金额：</view>
+        <p>￥<span>{{list.price}}</span></p>
+    </view>
+    <view class="bottom_right" bindtap="goPay">确认支付</view>
 </view>

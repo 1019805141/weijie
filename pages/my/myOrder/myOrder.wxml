@@ -1,86 +1,54 @@
 <!--pages/my/myOrder/myOrder.wxml-->
 <view class="topline"></view>
-<view class="nav_tab">
-    <view wx:for="{{list}}" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' bindtap="selected">
-        {{item}}
+<scroll-view scroll-x class="scroll-x weili">
+    <view wx:for="{{list}}" wx:key="{{index}}" class="view-parent2">
+      <view bindtap='dianjis' data-index='{{index}}' data-label="{{item.id}}" data-value="{{item.value}}"
+        class="view-item {{index==currentIndexs?'acrivws':''}}">
+        {{item.name}}</view>
+    </view>
+  </scroll-view>
+
+
+<!-- <view class="nav_tab">
+    <view wx:for="{{list}}" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' data-id="{{item.id}}" bindtap="selected">
+        {{item.name}}
         <view class="{{selected==index?'nav_underline':''}}"></view>
     </view>
-</view>
-<view class="bg">
+</view> -->
+<view class="bg" wx:for="{{orderList}}" wx:key="key" style="{{orderList.length>0?'display:block':'display:none'}}">
     <view class="container">
-        <view class="box">
+        <view class="box" bindtap="goDetail" data-id="{{item.id}}" data-type="{{item.status}}">
             <view class="box_top">
                 <view>
                     <image src="../../../image/time.png"></image>
-                    <view>2019-01-04</view>
+                    <view>{{item.created_at}}</view>
                 </view>
-                <p class="red">待付款</p>
+                <p class="red">{{item.status == 0?'待付款':item.status == 1?'待提货':item.status == 2?'已完成':item.status == 3?'已取消':item.status == 4?'退款中':item.status == 5?'被驳回':'退款完成'}}</p>
             </view>
-            <view class="box_cp"> 
-                <image src="../../../image/cplist.png"></image>
+            <view class="box_cp" wx:for="{{item.goods_list}}" wx:for-item="items"> 
+                <image src="{{imgUrl + items.get_goods_info.img}}"></image>
                 <view class="box_cp_text">
-                    <view>沙窝林子天津沙窝萝卜</view>
-                    <p>数量：8</p>
+                    <view>{{items.get_goods_info.name}}</view>
+                    <p>数量：{{items.amount}}</p>
                 </view>
                 <view class="box_cp_right">
-                    <p>￥9.99</p>
-                    <view>￥<span>9.99</span></view>
+                    <p>￥{{items.get_goods_info.market_price}}</p>
+                    <view>￥<span>{{items.get_goods_info.price}}</span></view>
                 </view>
             </view>
-            <view class="box_cp"> 
-                <image src="../../../image/cplist.png"></image>
-                <view class="box_cp_text">
-                    <view>沙窝林子天津沙窝萝卜</view>
-                    <p>数量：8</p>
-                </view>
-                <view class="box_cp_right">
-                    <p>￥9.99</p>
-                    <view>￥<span>9.99</span></view>
-                </view>
-            </view>
+        
             <view class="box_bottom">
-                <view>共2件商品</view>
-                <p>总计：<span>￥<i>9.99</i></span></p>
+                <view>共{{item.goods_list.length}}件商品</view>
+                <p>总计：<span>￥<i>{{item.order_money}}</i></span></p>
             </view>
         </view>
     </view>
 </view>
-<view class="bg">
-    <view class="container">
-        <view class="box">
-            <view class="box_top">
-                <view>
-                    <image src="../../../image/time.png"></image>
-                    <view>2019-01-04</view>
-                </view>
-                <p class="green">待付款</p>
-            </view>
-            <view class="box_cp"> 
-                <image src="../../../image/cplist.png"></image>
-                <view class="box_cp_text">
-                    <view>沙窝林子天津沙窝萝卜</view>
-                    <p>数量：8</p>
-                </view>
-                <view class="box_cp_right">
-                    <p>￥9.99</p>
-                    <view>￥<span>9.99</span></view>
-                </view>
-            </view>
-            <view class="box_cp"> 
-                <image src="../../../image/cplist.png"></image>
-                <view class="box_cp_text">
-                    <view>沙窝林子天津沙窝萝卜</view>
-                    <p>数量：8</p>
-                </view>
-                <view class="box_cp_right">
-                    <p>￥9.99</p>
-                    <view>￥<span>9.99</span></view>
-                </view>
-            </view>
-            <view class="box_bottom">
-                <view>共2件商品</view>
-                <p>总计：<span>￥<i>9.99</i></span></p>
-            </view>
-        </view>
-    </view>
-</view>
+<view class="zanwu" style="{{orderList.length>0?'display:none':'display:block'}}">
+    <image src="../../../image/zanwu.png" ></image>
+    <text>暂无订单信息</text>
+
+  </view>
+  <view style="{{orderList.length>0?'display:block':'display:none'}}">
+    <view class="bottom_footer" style="{{bottomStyle}}">已经到底啦~</view>
+  </view>

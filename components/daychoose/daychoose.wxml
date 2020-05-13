@@ -1,0 +1,6 @@
+<!--components/daychoose/daychoose.wxml-->
+<view class='month-view'>
+    <view class='{{preActive ? "active" : "disable"}} fontSize' bindtap="bindPreDay">前一天</view>
+    <view>{{year}}-{{month}}-{{day}}</view>
+    <view class='{{nextActive ? "active" : "disable"}} fontSize' bindtap="bindNextDay">后一天</view>
+    </view>
